@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Huỳnh Đức Mạnh</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/cv-manh.css">
+</head>
+<body>
+    <!-- 1. Xây dựng phần Banner/Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-user-circle"></i> Huỳnh Đức Mạnh - Backend Developer
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Kỹ năng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Kinh nghiệm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Xây dựng layout cho web với flexbox/grid -->
+    <div class="container-fluid main-layout">
+        <div class="row min-vh-100">
+            <!-- Sidebar với thông tin cá nhân -->
+            <div class="col-lg-4 col-md-5 sidebar-section">
+                <!-- 10. Bổ sung ảnh cá nhân -->
+                <div class="profile-section text-center">
+                    <img src="./Nhom12pro.img/HuynhDucManh.png" alt="Huỳnh Đức Mạnh" class="profile-img">
+                    <h2 class="profile-name">Huỳnh Đức Mạnh</h2>
+                    <p class="profile-title">Backend Developer</p>
+                </div>
+
+                <!-- 3. Thông tin cá nhân -->
+                <div class="personal-info-section">
+                    <h3><i class="fas fa-user"></i> Thông tin cá nhân</h3>
+                    <div class="info-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        <span>Ngày sinh: 08/06/2004</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0329222553</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>huynhducmanh2020@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Quận Gò Vấp, TP.HCM</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-github"></i>
+                        <span>github.com/huynhducmanh2005</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-facebook"></i>
+                        <span>facebook.com/huynhmanh2o5</span>
+                    </div>
+                </div>
+
+                <!-- 5. Sở thích -->
+                <div class="hobbies-section">
+                    <h3><i class="fas fa-heart"></i> Sở thích</h3>
+                    <div class="hobby-tags">
+                        <span class="hobby-tag">Lập trình</span>
+                        <span class="hobby-tag">Học công nghệ mới</span>
+                        <span class="hobby-tag">Đọc sách</span>
+                        <span class="hobby-tag">Nghe nhạc</span>
+                        <span class="hobby-tag">Chơi game</span>
+                        <span class="hobby-tag">Thể thao</span>
+                    </div>
+                </div>
+
+                <!-- 6. Chứng chỉ - Giải thưởng -->
+                <div class="certificates-section">
+                    <h3><i class="fas fa-certificate"></i> Chứng chỉ & Giải thưởng</h3>
+                    <div class="certificate-item">
+                        <i class="fas fa-trophy"></i>
+                        <div>
+                            <h5>Sinh viên xuất sắc</h5>
+                            <p>Học kỳ 1 năm học 2023-2024</p>
+                        </div>
+                    </div>
+                    <div class="certificate-item">
+                        <i class="fas fa-medal"></i>
+                        <div>
+                            <h5>Dự án tốt nghiệp</h5>
+                            <p>Điểm A cho dự án Booking System</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main content area -->
+            <div class="col-lg-8 col-md-7 main-content">
+                <!-- 4. Mục tiêu nghề nghiệp -->
+                <section id="about" class="content-section">
+                    <h2><i class="fas fa-bullseye"></i> Mục tiêu nghề nghiệp</h2>
+                    <p class="career-objective">
+                        Là một <strong>Backend Developer</strong> đầy tham vọng, tôi mong muốn tìm kiếm cơ hội để áp dụng 
+                        các kỹ năng kỹ thuật của mình và đóng góp vào các dự án sáng tạo trong môi trường làm việc năng động. 
+                        Mục tiêu của tôi là phát triển các ứng dụng web hiệu quả, bảo mật và có thể mở rộng, 
+                        đồng thời không ngừng học hỏi và cập nhật các công nghệ mới nhất trong ngành.
+                    </p>
+                </section>
+
+                <!-- Kỹ năng chuyên môn -->
+                <section id="skills" class="content-section">
+                    <h2><i class="fas fa-code"></i> Kỹ năng chuyên môn</h2>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Ngôn ngữ lập trình</h4>
+                            <ul class="skill-list">
+                                <li>Java <span class="skill-level">85%</span></li>
+                                <li>C# <span class="skill-level">75%</span></li>
+                                <li>JavaScript <span class="skill-level">80%</span></li>
+                                <li>HTML/CSS <span class="skill-level">90%</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>Framework & Libraries</h4>
+                            <ul class="skill-list">
+                                <li>Spring Boot <span class="skill-level">80%</span></li>
+                                <li>.NET Framework <span class="skill-level">70%</span></li>
+                                <li>ReactJS <span class="skill-level">75%</span></li>
+                                <li>jQuery <span class="skill-level">70%</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>Cơ sở dữ liệu</h4>
+                            <ul class="skill-list">
+                                <li>PostgreSQL <span class="skill-level">85%</span></li>
+                                <li>MySQL <span class="skill-level">80%</span></li>
+                                <li>SQL Server <span class="skill-level">75%</span></li>
+                                <li>MongoDB <span class="skill-level">60%</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>Công cụ & IDE</h4>
+                            <ul class="skill-list">
+                                <li>Visual Studio Code <span class="skill-level">90%</span></li>
+                                <li>Git & GitHub <span class="skill-level">85%</span></li>
+                                <li>Eclipse <span class="skill-level">80%</span></li>
+                                <li>DBeaver <span class="skill-level">75%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Kinh nghiệm -->
+                <section id="experience" class="content-section">
+                    <h2><i class="fas fa-briefcase"></i> Kinh nghiệm & Dự án</h2>
+                    
+                    <div class="experience-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2022 - Hiện tại</div>
+                            <div class="timeline-content">
+                                <h4>Sinh viên - Đại học Giao thông Vận tải TP.HCM</h4>
+                                <h5>Chuyên ngành: Công nghệ Thông tin</h5>
+                                
+                                <div class="project-details">
+                                    <h6><i class="fas fa-project-diagram"></i> Dự án: Booking Web Application</h6>
+                                    <ul>
+                                        <li>Phân tích yêu cầu và thiết kế cơ sở dữ liệu cho hệ thống</li>
+                                        <li>Thiết kế UX/UI cho ứng dụng web responsive</li>
+                                        <li>Phát triển backend với Java Spring Boot và RESTful APIs</li>
+                                        <li>Xây dựng frontend với HTML, CSS, JavaScript ES6+</li>
+                                        <li>Tích hợp Fetch API cho giao tiếp bất đồng bộ</li>
+                                        <li>Phát triển CRUD operations với PostgreSQL</li>
+                                        <li>Testing và debugging hệ thống</li>
+                                        <li>Chuẩn bị báo cáo và demo sản phẩm</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Học vấn -->
+                <section class="content-section">
+                    <h2><i class="fas fa-graduation-cap"></i> Học vấn</h2>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h4>Cử nhân Công nghệ Thông tin</h4>
+                            <span class="education-period">2022 - 2026</span>
+                        </div>
+                        <p><strong>Trường:</strong> Đại học Giao thông Vận tải TP. Hồ Chí Minh</p>
+                        <p><strong>Chuyên ngành:</strong> Công nghệ Thông tin</p>
+                        <p><strong>Tình trạng:</strong> Sinh viên năm 3</p>
+                    </div>
+                </section>
+
+                <!-- Liên hệ -->
+                <section id="contact" class="content-section">
+                    <h2><i class="fas fa-envelope"></i> Liên hệ</h2>
+                    <div class="contact-form-container">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Họ và tên" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Chủ đề">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="4" placeholder="Tin nhắn" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+                            </button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

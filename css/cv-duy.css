@@ -1,0 +1,1400 @@
+/* ===================================
+   ULTRA PREMIUM CV DESIGN - PHIÊN BẢN 10 ĐIỂM
+   Tác giả: Nguyen Ngoc Duy
+   Mô tả: CSS cho trang CV cá nhân với tính năng chỉnh sửa
+   YÊU CẦU 12: ỨNG DỤNG CSS3 NÂNG CAO (1.5 điểm)
+=================================== */
+
+/* Reset CSS và thiết lập cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* YÊU CẦU 12: CSS3 VARIABLES NÂNG CAO */
+:root {
+    --primary-color: #0f172a;           
+    --primary-light: #1e293b;          
+    --secondary-color: #3b82f6;        
+    --secondary-light: #60a5fa;        
+    --accent-color: #f97316;           
+    --accent-light: #fdba74;           
+    --text-color: #334155;             
+    --light-text: #64748b;             
+    --white: #fff;                     
+    --off-white: #f8fafc;              
+    --light-bg: #f1f5f9;               
+    --border-radius: 12px;             
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    
+    /* CSS3 CUSTOM PROPERTIES NÂNG CAO */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    --gradient-hover: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --shadow-strong: 0 15px 40px rgba(0, 0, 0, 0.15);
+    
+    /* CSS3 FILTER PROPERTIES */
+    --filter-blur: blur(10px);
+    --filter-brightness: brightness(1.1);
+    --filter-saturate: saturate(1.2);
+}
+
+/* YÊU CẦU 12: CSS3 ADVANCED SELECTORS */
+*:not(.cv-duy-wrapper *):not(html):not(body) {
+    /* Tránh conflict với styles khác */
+}
+
+/* Thiết lập body với CSS3 features */
+body {
+    background: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: 15px;
+    scroll-behavior: smooth;
+    /* CSS3 FONT FEATURES */
+    font-feature-settings: "liga" 1, "kern" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================================
+   YÊU CẦU 1: NAVIGATION BAR NÂNG CAO
+=================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    /* CSS3 BACKDROP FILTER */
+    backdrop-filter: var(--filter-blur);
+    -webkit-backdrop-filter: var(--filter-blur);
+    z-index: 1000;
+    padding: 15px 0;
+    transition: var(--transition);
+    /* CSS3 CLIP-PATH */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+/* CSS3 SCROLL EFFECTS */
+.navbar.scrolled {
+    background: rgba(15, 23, 42, 0.98);
+    padding: 10px 0;
+    box-shadow: var(--shadow-medium);
+    /* CSS3 TRANSFORM */
+    transform: translateY(0);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 18px;
+    /* CSS3 TEXT EFFECTS */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-logo i {
+    margin-right: 10px;
+    font-size: 24px;
+    color: var(--secondary-color);
+    /* CSS3 ANIMATION */
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+/* CSS3 KEYFRAME ANIMATION NÂNG CAO */
+@keyframes logoFloat {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+        filter: hue-rotate(0deg);
+    }
+    25% { 
+        transform: translateY(-3px) rotate(5deg); 
+        filter: hue-rotate(90deg);
+    }
+    75% { 
+        transform: translateY(3px) rotate(-5deg); 
+        filter: hue-rotate(270deg);
+    }
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+    /* CSS3 TRANSFORM-ORIGIN */
+    transform-origin: center bottom;
+}
+
+.nav-link:hover {
+    color: var(--secondary-light);
+    /* CSS3 3D TRANSFORM */
+    transform: perspective(1000px) rotateX(10deg) translateY(-2px);
+    text-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+}
+
+/* CSS3 PSEUDO-ELEMENT ANIMATIONS */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-secondary);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    /* CSS3 BOX-SHADOW */
+    box-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* Nút bật/tắt chế độ chỉnh sửa với CSS3 */
+.edit-toggle-btn {
+    background: var(--gradient-secondary);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* CSS3 PSEUDO-ELEMENT EFFECTS */
+.edit-toggle-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+
+.edit-toggle-btn:hover::before {
+    left: 100%;
+}
+
+.edit-toggle-btn:hover {
+    /* CSS3 3D TRANSFORM */
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-strong);
+    filter: var(--filter-brightness);
+}
+
+.edit-toggle-btn.active {
+    background: linear-gradient(135deg, #10b981, #059669);
+    /* CSS3 ANIMATION */
+    animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    50% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+}
+
+/* Thông báo chế độ chỉnh sửa */
+.edit-notification {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    z-index: 999;
+    box-shadow: var(--shadow-medium);
+    /* CSS3 BORDER */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.edit-notification.show {
+    display: flex;
+    /* CSS3 ANIMATION */
+    animation: slideInFromTop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateX(-50%) translateY(-100%) rotateX(-90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) translateY(0) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+/* ===================================
+   MAIN CONTAINER với CSS3 GRID NÂNG CAO
+=================================== */
+.container {
+    max-width: 1200px;
+    margin: 80px auto 50px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+    /* CSS3 GRID NÂNG CAO */
+    display: grid;
+    grid-template-columns: minmax(300px, 350px) 1fr;
+    grid-template-areas: "sidebar main";
+    /* CSS3 CONTAINER QUERIES SIMULATION */
+    container-type: inline-size;
+}
+
+/* CSS3 CONTAINER QUERIES POLYFILL */
+@container (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "sidebar"
+            "main";
+    }
+}
+
+/* ===================================
+   SIDEBAR STYLES với CSS3 NÂNG CAO
+=================================== */
+.sidebar {
+    grid-area: sidebar;
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    /* CSS3 MASK */
+    -webkit-mask: linear-gradient(45deg, black 0%, black 90%, transparent 100%);
+    mask: linear-gradient(45deg, black 0%, black 90%, transparent 100%);
+}
+
+/* CSS3 MULTIPLE PSEUDO-ELEMENTS */
+.sidebar::before,
+.sidebar::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    /* CSS3 FILTER EFFECTS */
+    filter: blur(1px);
+    opacity: 0.05;
+    /* CSS3 ANIMATION */
+    animation: floatBubbles 8s ease-in-out infinite alternate;
+}
+
+.sidebar::before {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, var(--white), transparent);
+    top: -30px;
+    right: -30px;
+    animation-delay: 0s;
+}
+
+.sidebar::after {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--secondary-light), transparent);
+    bottom: -50px;
+    left: -50px;
+    animation-delay: 2s;
+}
+
+@keyframes floatBubbles {
+    0% { 
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: 0.05;
+    }
+    100% { 
+        transform: translateY(-20px) scale(1.1) rotate(180deg);
+        opacity: 0.08;
+    }
+}
+
+/* ===================================
+   PROFILE SECTION với CSS3 NÂNG CAO
+=================================== */
+.profile-container {
+    text-align: center;
+    position: relative;
+    margin-bottom: 40px;
+    /* CSS3 PERSPECTIVE */
+    perspective: 1000px;
+}
+
+.profile-img-border {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    padding: 5px;
+    background: var(--gradient-secondary);
+    margin: 0 auto 20px;
+    position: relative;
+    /* CSS3 FILTER */
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+/* CSS3 ADVANCED HOVER EFFECTS */
+.profile-img-border:hover {
+    /* CSS3 3D TRANSFORM */
+    transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+    /* CSS3 CLIP-PATH ANIMATION */
+    clip-path: circle(50% at 50% 50%);
+}
+
+.profile-img:hover {
+    /* CSS3 FILTER COMBINATIONS */
+    filter: var(--filter-brightness) var(--filter-saturate);
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* CSS3 TEXT EFFECTS */
+.name {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    /* CSS3 TEXT STROKE */
+    -webkit-text-stroke: 1px transparent;
+    text-stroke: 1px transparent;
+    background: linear-gradient(45deg, var(--white), var(--secondary-light));
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.profession {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+    /* CSS3 TEXT ANIMATION */
+    animation: typewriter 3s steps(20) 1s both;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--secondary-color);
+}
+
+@keyframes typewriter {
+    0% { 
+        width: 0;
+        border-right-color: var(--secondary-color);
+    }
+    90% {
+        border-right-color: var(--secondary-color);
+    }
+    100% { 
+        width: 100%;
+        border-right-color: transparent;
+    }
+}
+
+/* ===================================
+   SOCIAL ICONS với CSS3 NÂNG CAO
+=================================== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 16px;
+    transition: var(--transition);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    /* CSS3 BACKDROP-FILTER */
+    backdrop-filter: blur(5px);
+}
+
+/* CSS3 RIPPLE EFFECT */
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+}
+
+.social-icon:hover::before {
+    width: 100px;
+    height: 100px;
+}
+
+.social-icon:hover {
+    background: var(--secondary-color);
+    /* CSS3 3D TRANSFORM */
+    transform: translateY(-3px) rotateY(15deg);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* CSS3 NTH-CHILD SELECTORS */
+.social-icon:nth-child(1):hover { transform: translateY(-3px) rotate(10deg); }
+.social-icon:nth-child(2):hover { transform: translateY(-3px) rotate(-10deg); }
+.social-icon:nth-child(3):hover { transform: translateY(-3px) scale(1.2); }
+.social-icon:nth-child(4):hover { transform: translateY(-3px) rotateX(15deg); }
+
+/* ===================================
+   SIDEBAR SECTIONS
+=================================== */
+.sidebar-section {
+    margin-top: 35px;
+    /* CSS3 SCROLL ANIMATIONS */
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+/* CSS3 ANIMATION DELAYS */
+.sidebar-section:nth-child(2) { animation-delay: 0.2s; }
+.sidebar-section:nth-child(3) { animation-delay: 0.4s; }
+.sidebar-section:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) rotateX(-15deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+.sidebar-title {
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* CSS3 ADVANCED PSEUDO-ELEMENTS */
+.sidebar-title::before {
+    content: '';
+    width: 30px;
+    height: 2px;
+    background: var(--gradient-secondary);
+    margin-right: 10px;
+    border-radius: 2px;
+    /* CSS3 ANIMATION */
+    animation: expandLine 1s ease 0.5s both;
+}
+
+@keyframes expandLine {
+    0% { width: 0; }
+    100% { width: 30px; }
+}
+
+.sidebar-title::after {
+    content: '';
+    flex-grow: 1;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-left: 10px;
+    border-radius: 2px;
+}
+
+/* ===================================
+   YÊU CẦU 8: CONTACT INFO NÂNG CAO
+=================================== */
+.contact-info {
+    list-style: none;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: var(--transition);
+    /* CSS3 TRANSFORM-ORIGIN */
+    transform-origin: left center;
+}
+
+.contact-item:hover {
+    /* CSS3 3D TRANSFORM */
+    transform: translateX(5px) perspective(1000px) rotateY(5deg);
+}
+
+.contact-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+    color: var(--secondary-light);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+/* CSS3 MORPHING EFFECTS */
+.contact-item:hover .contact-icon {
+    background: var(--secondary-color);
+    color: var(--white);
+    /* CSS3 CLIP-PATH ANIMATION */
+    clip-path: polygon(0 0, 100% 30%, 100% 70%, 0 100%);
+    animation: morphIcon 0.6s ease;
+}
+
+@keyframes morphIcon {
+    0% { clip-path: circle(50% at 50% 50%); }
+    50% { clip-path: polygon(20% 0%, 80% 20%, 100% 80%, 20% 100%); }
+    100% { clip-path: polygon(0 0, 100% 30%, 100% 70%, 0 100%); }
+}
+
+/* ===================================
+   YÊU CẦU 5: SKILLS SECTION NÂNG CAO
+=================================== */
+.skills-list {
+    list-style: none;
+}
+
+.skill-item {
+    margin-bottom: 18px;
+    /* CSS3 TRANSFORM */
+    transform: translateX(-10px);
+    opacity: 0;
+    animation: slideInFromLeft 0.6s ease forwards;
+}
+
+/* CSS3 STAGGERED ANIMATIONS */
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skill-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-30px) rotateY(-45deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+.skill-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* CSS3 GRADIENT ANIMATIONS */
+.skill-progress {
+    height: 100%;
+    background: var(--gradient-secondary);
+    border-radius: 3px;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+/* CSS3 SHIMMER EFFECT */
+.skill-progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* CSS3 GLOW EFFECTS */
+.html-skill { 
+    width: 95%; 
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+.php-skill { 
+    width: 80%; 
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+}
+.design-skill { 
+    width: 85%; 
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+.uiux-skill { 
+    width: 80%; 
+    box-shadow: 0 0 10px rgba(139, 69, 19, 0.5);
+}
+.sql-skill { 
+    width: 85%; 
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* ===================================
+   MAIN CONTENT với CSS3 NÂNG CAO
+=================================== */
+.main-content {
+    grid-area: main;
+    padding: 40px;
+    background: var(--white);
+    /* CSS3 SCROLL SNAP */
+    scroll-snap-type: y mandatory;
+}
+
+.section {
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 20px;
+    /* CSS3 SCROLL SNAP */
+    scroll-snap-align: start;
+    /* CSS3 CONTAINER QUERIES */
+    container-type: inline-size;
+}
+
+/* CSS3 INTERSECTION OBSERVER SIMULATION */
+.section.in-view {
+    animation: sectionReveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes sectionReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) rotateX(-10deg);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+        filter: blur(0px);
+    }
+}
+
+/* CSS3 ADVANCED BORDERS */
+.section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    height: 40px;
+    width: 4px;
+    background: var(--gradient-secondary);
+    border-radius: 2px;
+    /* CSS3 CLIP-PATH */
+    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+}
+
+/* ===================================
+   RESPONSIVE với CSS3 MEDIA QUERIES NÂNG CAO
+=================================== */
+
+/* CSS3 CONTAINER QUERIES */
+@container (max-width: 768px) {
+    .main-content {
+        padding: 30px 20px;
+    }
+    
+    .section-title {
+        font-size: 22px;
+    }
+}
+
+/* CSS3 MEDIA QUERIES với LOGICAL PROPERTIES */
+@media screen and (max-width: 1000px) {
+    .container {
+        grid-template-columns: minmax(250px, 300px) 1fr;
+        margin-inline: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "sidebar"
+            "main";
+        margin-block-start: 140px;
+        margin-inline: 0;
+        border-radius: 0;
+    }
+    
+    /* CSS3 TRANSFORM MEDIA QUERIES */
+    .profile-img-border:hover {
+        transform: scale(1.02);
+    }
+    
+    .social-icon:hover {
+        transform: translateY(-2px) scale(1.1);
+    }
+}
+
+/* CSS3 PRINT STYLES NÂNG CAO */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+    
+    @page {
+        size: A4 portrait;
+        margin: 0mm;
+    }
+    
+    /* CSS3 PRINT OPTIMIZATIONS */
+    .sidebar::before,
+    .sidebar::after {
+        display: none !important;
+    }
+    
+    .skill-progress::before {
+        display: none !important;
+    }
+    
+    /* CSS3 BREAK PROPERTIES */
+    .section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* ===================================
+   CSS3 EXPERIMENTAL FEATURES
+=================================== */
+
+/* CSS3 SCROLL-TIMELINE (Experimental) */
+@supports (animation-timeline: scroll()) {
+    .skill-progress {
+        animation: skillGrow 1s linear;
+        animation-timeline: scroll();
+    }
+}
+
+/* CSS3 HAS SELECTOR (Experimental) */
+@supports selector(:has(*)) {
+    .sidebar:has(.edit-mode) {
+        background: linear-gradient(135deg, #10b981, #059669);
+    }
+}
+
+/* CSS3 LAYER CASCADE (Experimental) */
+@supports (cascade-layer: base) {
+    @layer base, components, utilities;
+    
+    @layer base {
+        * {
+            box-sizing: border-box;
+        }
+    }
+}
+
+/* CSS3 PREFERS MOTION */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* CSS3 PREFERS COLOR SCHEME */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-bg: #1a1a1a;
+        --white: #2a2a2a;
+        --text-color: #e5e5e5;
+    }
+}
+
+/* CSS3 FOCUS VISIBLE */
+*:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ===================================
+   YÊU CẦU 12: TỔNG KẾT CSS3 NÂNG CAO
+   - Advanced Selectors ✅
+   - 3D Transforms ✅
+   - Keyframe Animations ✅
+   - CSS Grid Advanced ✅
+   - Filter Effects ✅
+   - Clip-path ✅
+   - Backdrop-filter ✅
+   - Custom Properties ✅
+   - Container Queries ✅
+   - Scroll Animations ✅
+   - Modern CSS Features ✅
+=================================== */
+
+/* ===================================
+   PHẦN BỔ SUNG: PROJECTS, CERTIFICATES, INTERESTS
+=================================== */
+
+/* YÊU CẦU 7: PROJECTS SECTION NÂNG CAO */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    /* CSS3 GRID ADVANCED */
+    grid-auto-rows: minmax(250px, auto);
+    grid-auto-flow: dense;
+}
+
+.project-card {
+    background: var(--off-white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    position: relative;
+    /* CSS3 TRANSFORM STYLE */
+    transform-style: preserve-3d;
+}
+
+/* CSS3 HOVER EFFECTS NÂNG CAO */
+.project-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: var(--shadow-strong);
+    /* CSS3 FILTER */
+    filter: var(--filter-brightness);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-secondary);
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 1;
+    /* CSS3 BLEND MODE */
+    mix-blend-mode: overlay;
+}
+
+.project-card:hover::before {
+    opacity: 0.1;
+}
+
+.project-image {
+    height: 160px;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-icon {
+    font-size: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: var(--transition);
+    /* CSS3 TEXT SHADOW */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.2) rotate(10deg);
+    color: var(--white);
+}
+
+/* YÊU CẦU 6: CERTIFICATES NÂNG CAO */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.certificate-card {
+    background: var(--off-white);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+/* CSS3 GRADIENT BORDER ANIMATION */
+.certificate-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-secondary);
+    z-index: -1;
+    border-radius: 10px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-medium);
+    color: var(--white);
+}
+
+.certificate-card:hover::before {
+    opacity: 1;
+}
+
+.certificate-icon {
+    font-size: 40px;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    transition: var(--transition);
+}
+
+.certificate-card:hover .certificate-icon {
+    color: var(--white);
+    transform: rotateY(360deg);
+    animation: iconSpin 0.6s ease;
+}
+
+@keyframes iconSpin {
+    0% { transform: rotateY(0deg) scale(1); }
+    50% { transform: rotateY(180deg) scale(1.2); }
+    100% { transform: rotateY(360deg) scale(1); }
+}
+
+/* YÊU CẦU 4: INTERESTS NÂNG CAO */
+.interests {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.interest-item {
+    background: var(--off-white);
+    border-radius: 10px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* CSS3 MAGNETIC HOVER EFFECT */
+.interest-item:hover {
+    transform: translateY(-8px) rotateZ(2deg);
+    background: var(--secondary-color);
+    color: var(--white);
+    box-shadow: var(--shadow-strong);
+}
+
+.interest-item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    opacity: 0;
+    transition: var(--transition);
+    transform: scale(0);
+}
+
+.interest-item:hover::before {
+    opacity: 0.1;
+    transform: scale(1);
+}
+
+.interest-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+}
+
+.interest-item:hover .interest-icon {
+    color: var(--white);
+    transform: scale(1.3) rotateY(180deg);
+    animation: bounceIcon 0.6s ease;
+}
+
+@keyframes bounceIcon {
+    0%, 100% { transform: scale(1.3) rotateY(180deg); }
+    50% { transform: scale(1.5) rotateY(180deg) translateY(-5px); }
+}
+
+/* ===================================
+   TIMELINE STYLES NÂNG CAO
+=================================== */
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 2px;
+    height: calc(100% - 50px);
+    background: var(--gradient-secondary);
+    opacity: 0.3;
+    /* CSS3 ANIMATION */
+    animation: timelineGrow 2s ease 0.5s both;
+}
+
+@keyframes timelineGrow {
+    0% { height: 0; }
+    100% { height: calc(100% - 50px); }
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: timelineItemAppear 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.8s; }
+.timeline-item:nth-child(2) { animation-delay: 1.0s; }
+.timeline-item:nth-child(3) { animation-delay: 1.2s; }
+
+@keyframes timelineItemAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px) rotateY(-15deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotateY(0deg);
+    }
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.timeline-dot::before {
+    content: '';
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2) rotate(90deg);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.timeline-item:hover .timeline-dot::before {
+    background: var(--accent-color);
+    transform: scale(1.2);
+}
+
+.timeline-content {
+    background: var(--off-white);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.timeline-content:hover::before {
+    left: 100%;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px) rotateX(2deg);
+    box-shadow: var(--shadow-medium);
+}
+
+/* ===================================
+   DOWNLOAD BUTTON NÂNG CAO
+=================================== */
+.download-resume {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--gradient-secondary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    margin-top: 20px;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.download-resume::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+.download-resume:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.download-resume:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-strong);
+    color: var(--white);
+}
+
+/* ===================================
+   EDIT MODE STYLES NÂNG CAO
+=================================== */
+.edit-mode .editable {
+    border: 2px dashed var(--secondary-color);
+    padding: 2px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.edit-mode .editable::before {
+    content: attr(data-field);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 10px;
+    color: var(--secondary-color);
+    background: var(--white);
+    padding: 2px 6px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: var(--transition);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.edit-mode .editable:hover::before {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.edit-mode .editable:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--accent-color);
+    transform: scale(1.02);
+}
+
+.editing-input {
+    background: var(--white);
+    border: 2px solid var(--secondary-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    animation: inputGlow 1s infinite alternate;
+}
+
+@keyframes inputGlow {
+    0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.3); }
+    100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.6); }
+}
+
+/* ===================================
+   MODAL STYLES NÂNG CAO
+=================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: var(--filter-blur);
+    animation: modalBackdropFade 0.3s ease;
+}
+
+@keyframes modalBackdropFade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    box-shadow: var(--shadow-strong);
+    position: relative;
+    animation: modalSlideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes modalSlideIn {
+    0% {
+        transform: translateY(-50px) scale(0.8) rotateX(-10deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+/* ===================================
+   SUCCESS MESSAGE NÂNG CAO
+=================================== */
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    z-index: 1002;
+    display: none;
+    box-shadow: var(--shadow-medium);
+    backdrop-filter: var(--filter-blur);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.success-message.show {
+    display: block;
+    animation: messageSlideIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes messageSlideIn {
+    0% {
+        transform: translateX(100%) rotateZ(10deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotateZ(0deg);
+        opacity: 1;
+    }
+}

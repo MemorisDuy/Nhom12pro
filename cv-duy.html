@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital CV - Nguyen Ngoc Duy</title>
+    <!-- Liên kết Font Awesome cho các icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Liên kết Google Fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <!-- Individual CV CSS -->
+    <link rel="stylesheet" href="css/cv-duy.css">
+</head>
+<body>
+    <div class="cv-duy-wrapper">
+    <!-- ===================================
+         YÊU CẦU 1: NAVIGATION BAR
+    =================================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-user-circle"></i>
+                <span>CV Digital</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#about" class="nav-link">Giới thiệu</a>
+                <a href="#education" class="nav-link">Học vấn</a>
+                <a href="#experience" class="nav-link">Kinh nghiệm</a>
+                <a href="#projects" class="nav-link">Dự án</a>
+                <a href="#contact" class="nav-link">Liên hệ</a>
+                <!-- Nút bật/tắt chế độ chỉnh sửa -->
+                <button class="edit-toggle-btn" id="editToggle">
+                    <i class="fas fa-edit"></i>
+                    <span>Chỉnh sửa</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Thông báo chế độ chỉnh sửa -->
+    <div class="edit-notification" id="editNotification">
+        <i class="fas fa-info-circle"></i>
+        <span>Chế độ chỉnh sửa: Click vào các phần tử để thay đổi nội dung</span>
+        <button class="save-changes-btn" id="saveChanges">
+            <i class="fas fa-save"></i>
+            Lưu thay đổi
+        </button>
+    </div>
+
+    <div class="container">
+        <!-- ===================================
+             SIDEBAR - Chứa thông tin cá nhân và kỹ năng
+        =================================== -->
+        <div class="sidebar">
+            <!-- YÊU CẦU 2: THÔNG TIN CÁ NHÂN -->
+            <div class="profile-container animate delay-1">
+                <div class="profile-img-border">
+                    <img src="/Nhom12pro.img/NguyenNgocDuy.jpg" alt="Profile Photo" class="profile-img">
+                </div>
+                <h1 class="name editable" data-field="name">Nguyen Ngoc Duy</h1>
+                <h2 class="profession editable" data-field="profession">Web Developer</h2>
+                
+                <!-- YÊU CẦU 8: LIÊN HỆ BAO GỒM GITHUB, FACEBOOK, INSTAGRAM -->
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/duy-nguy%E1%BB%85n-ng%E1%BB%8Dc-duy-423b94367/" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/MemorisDuy" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/duy1234567890a" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ngoc_duy24" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <!-- YÊU CẦU 8: THÔNG TIN LIÊN HỆ CHI TIẾT -->
+            <div class="sidebar-section animate delay-2">
+                <h3 class="sidebar-title">Liên hệ</h3>
+                <ul class="contact-info">
+                    <li class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-text editable" data-field="phone">0358591058</div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text editable" data-field="email">ngocduy12345123@gmail.com</div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text editable" data-field="address">388 Huynh Thi Hai, District 12, Ho Chi Minh City, Vietnam</div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                        <div class="contact-text">
+                            <a href="https://github.com/MemorisDuy" target="_blank" class="editable" data-field="website">https://github.com/MemorisDuy</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- YÊU CẦU 5: KỸ NĂNG -->
+            <div class="sidebar-section animate delay-3">
+                <h3 class="sidebar-title">Kỹ năng</h3>
+                <ul class="skills-list" id="skillsList">
+                    <li class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name editable" data-field="skill1">HTML, CSS, JavaScript</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress html-skill" data-percentage="95"></div>
+                        </div>
+                    </li>
+                    <li class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name editable" data-field="skill2">PHP</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress php-skill" data-percentage="80"></div>
+                        </div>
+                    </li>
+                    <li class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name editable" data-field="skill3">Photoshop & Canva</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress design-skill" data-percentage="85"></div>
+                        </div>
+                    </li>
+                    <li class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name editable" data-field="skill4">UI/UX Design</span>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress uiux-skill" data-percentage="80"></div>
+                        </div>
+                    </li>
+                    <li class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name editable" data-field="skill5">MySQL & SQL Server</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress sql-skill" data-percentage="85"></div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Nút thêm kỹ năng mới (hiển thị khi ở chế độ edit) -->
+                <button class="add-skill-btn edit-only" id="addSkillBtn">
+                    <i class="fas fa-plus"></i> Thêm kỹ năng
+                </button>
+            </div>
+            
+            <!-- YÊU CẦU 5: NGÔN NGỮ -->
+            <div class="sidebar-section animate delay-4">
+                <h3 class="sidebar-title">Ngôn ngữ</h3>
+                <ul class="languages-list">
+                    <li class="language-item">
+                        <span class="language-text editable" data-field="lang1">Tiếng Việt</span>
+                        <div class="language-level" data-level="5">
+                            <span class="level-dot active"></span>
+                            <span class="level-dot active"></span>
+                            <span class="level-dot active"></span>
+                            <span class="level-dot active"></span>
+                            <span class="level-dot active"></span>
+                        </div>
+                    </li>
+                    <li class="language-item">
+                        <span class="language-text editable" data-field="lang2">Tiếng Anh</span>
+                        <div class="language-level" data-level="4">
+                            <span class="level-dot active"></span>
+                            <span class="level-dot active"></span>
+                            <span class="level-dot active"></span>
+                            <span class="level-dot active"></span>
+                            <span class="level-dot"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- ===================================
+             MAIN CONTENT - Nội dung chính
+        =================================== -->
+        <div class="main-content">
+            <!-- YÊU CẦU 3: THÔNG TIN NGHỀ NGHIỆP/MỤC TIÊU -->
+            <div class="section about-section animate delay-1" id="about">
+                <h3 class="section-title">Mục tiêu nghề nghiệp</h3>
+                <p class="about-text editable" data-field="objective1">
+                    Tôi là Nguyen Ngoc Duy, hiện đang là sinh viên năm thứ hai chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải Thành phố Hồ Chí Minh. Tôi đam mê phát triển các ứng dụng web hiệu quả và thân thiện với người dùng, với nền tảng vững chắc về HTML, CSS, JavaScript, PHP và thành thạo MySQL cùng SQL Server. Với kiến thức này, tôi hướng tới trở thành một full-stack developer, nơi tôi có thể thiết kế giao diện hấp dẫn và xây dựng hệ thống backend mạnh mẽ.
+                </p>
+                <p class="about-text editable" data-field="objective2">
+                    Với kiến thức sâu rộng về HTML, CSS, JavaScript và các framework như React, tôi có thể biến những ý tưởng thiết kế thành các website responsive và tương tác. Tôi cũng có kinh nghiệm với Node.js để xây dựng ứng dụng web toàn diện từ front-end đến back-end. Ngoài ra, tôi thành thạo sử dụng GitHub cho việc cộng tác nhóm, quản lý phiên bản và triển khai dự án, giúp quản lý quy trình làm việc nhóm hiệu quả và giao hàng dự án thành công.
+                </p>
+            </div>
+            
+            <!-- YÊU CẦU 4: HỌC VẤN -->
+            <div class="section education-section animate delay-2" id="education">
+                <h3 class="section-title">Học vấn</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title editable" data-field="edu1_title">Sinh viên năm thứ hai</h4>
+                            <h5 class="timeline-subtitle editable" data-field="edu1_school">Đại học Giao thông Vận tải TP.HCM</h5>
+                            <span class="timeline-period editable" data-field="edu1_period">2023 - 2027</span>
+                            <p class="timeline-desc editable" data-field="edu1_desc">
+                                Hiện tại tôi đang là sinh viên chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM với GPA tích lũy 3.0/4.0. Tôi đã tham gia các dự án thực hành về phát triển ứng dụng web và mobile, xây dựng nền tảng vững chắc cho sự nghiệp lập trình viên trong tương lai.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title editable" data-field="edu2_title">Kỹ năng thiết kế</h4>
+                            <h5 class="timeline-subtitle editable" data-field="edu2_school">Photoshop & Canva</h5>
+                            <span class="timeline-period editable" data-field="edu2_period">2021</span>
+                            <p class="timeline-desc editable" data-field="edu2_desc">
+                                Tôi sở hữu kỹ năng chuyên nghiệp trong việc sử dụng Photoshop và Canva để hỗ trợ công việc thiết kế cho các dự án đa dạng.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- YÊU CẦU 4: KINH NGHIỆM LÀM VIỆC -->
+            <div class="section experience-section animate delay-3" id="experience">
+                <h3 class="section-title">Kinh nghiệm làm việc</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title editable" data-field="exp1_title">Front-end Developer</h4>
+                            <h5 class="timeline-subtitle editable" data-field="exp1_company">Sinh viên năm 2 - Đại học Giao thông Vận tải TP.HCM</h5>
+                            <span class="timeline-period editable" data-field="exp1_period">2023 - Hiện tại</span>
+                            <p class="timeline-desc editable" data-field="exp1_desc">
+                                Phát triển các ứng dụng web cơ bản và dự án học tập sử dụng HTML, CSS, JavaScript và PHP. Tập trung tạo giao diện thân thiện, tối ưu hiệu suất và cải thiện tốc độ tải trang. Liên tục học hỏi và áp dụng công nghệ phát triển web mới.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="timeline-title editable" data-field="exp2_title">Web Developer</h4>
+                            <h5 class="timeline-subtitle editable" data-field="exp2_company">Dự án học tập / Dự án cá nhân</h5>
+                            <span class="timeline-period editable" data-field="exp2_period">2025 - Hiện tại</span>
+                            <p class="timeline-desc editable" data-field="exp2_desc">
+                                Xây dựng và phát triển website cho các dự án học tập và doanh nghiệp nhỏ, áp dụng kiến thức về HTML5, CSS3, JavaScript, Bootstrap và jQuery. Thiết kế giao diện người dùng responsive, đảm bảo tương thích trên nhiều thiết bị và trình duyệt. Học hỏi và triển khai công nghệ web mới trong quá trình thực hiện dự án.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YÊU CẦU 6: CHỨNG CHỈ - GIẢI THƯỞNG -->
+            <div class="section certificates-section animate delay-4">
+                <h3 class="section-title">Chứng chỉ - Giải thưởng</h3>
+                <div class="certificates-grid">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h4 class="certificate-title editable" data-field="cert1_title">Chứng chỉ HTML/CSS</h4>
+                            <p class="certificate-issuer editable" data-field="cert1_issuer">FreeCodeCamp</p>
+                            <span class="certificate-year editable" data-field="cert1_year">2024</span>
+                        </div>
+                    </div>
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h4 class="certificate-title editable" data-field="cert2_title">Học bổng Khuyến khích học tập</h4>
+                            <p class="certificate-issuer editable" data-field="cert2_issuer">Đại học Giao thông Vận tải</p>
+                            <span class="certificate-year editable" data-field="cert2_year">2023</span>
+                        </div>
+                    </div>
+                    <div class="certificate-card no-certificate">
+                        <div class="certificate-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h4 class="certificate-title editable" data-field="cert3_title">Đang học thêm</h4>
+                            <p class="certificate-issuer editable" data-field="cert3_issuer">Các khóa học React, Node.js</p>
+                            <span class="certificate-year editable" data-field="cert3_year">2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- YÊU CẦU 7: DỰ ÁN -->
+            <div class="section projects-section animate delay-5" id="projects">
+                <h3 class="section-title">Dự án nổi bật</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-shopping-cart project-icon"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title editable" data-field="proj1_title">Website Thương mại điện tử</h4>
+                            <h5 class="project-subtitle editable" data-field="proj1_client">Tech Solutions Vietnam</h5>
+                            <p class="project-desc editable" data-field="proj1_desc">Phát triển website thương mại điện tử với React, hỗ trợ thanh toán online và quản lý sản phẩm.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-paint-brush project-icon"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title editable" data-field="proj2_title">Portfolio cá nhân</h4>
+                            <h5 class="project-subtitle editable" data-field="proj2_client">Freelance</h5>
+                            <p class="project-desc editable" data-field="proj2_desc">Thiết kế và phát triển portfolio cá nhân với giao diện responsive và hiệu ứng động.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
+                                <span class="project-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <i class="fas fa-graduation-cap project-icon"></i>
+                        </div>
+                        <div class="project-content">
+                            <h4 class="project-title editable" data-field="proj3_title">Hệ thống quản lý sinh viên</h4>
+                            <h5 class="project-subtitle editable" data-field="proj3_client">Dự án học tập</h5>
+                            <p class="project-desc editable" data-field="proj3_desc">Xây dựng hệ thống quản lý thông tin sinh viên với PHP và MySQL cho dự án cuối kỳ.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">PHP</span>
+                                <span class="project-tag">MySQL</span>
+                                <span class="project-tag">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- YÊU CẦU 4: SỞ THÍCH -->
+            <div class="section interests-section animate delay-6">
+                <h3 class="section-title">Sở thích</h3>
+                <div class="interests">
+                    <div class="interest-item">
+                        <i class="fas fa-camera interest-icon"></i>
+                        <span class="interest-text editable" data-field="hobby1">Nhiếp ảnh</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-gamepad interest-icon"></i>
+                        <span class="interest-text editable" data-field="hobby2">Chơi game</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-book interest-icon"></i>
+                        <span class="interest-text editable" data-field="hobby3">Đọc sách</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-code interest-icon"></i>
+                        <span class="interest-text editable" data-field="hobby4">Lập trình</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-music interest-icon"></i>
+                        <span class="interest-text editable" data-field="hobby5">Âm nhạc</span>
+                    </div>
+                    <div class="interest-item">
+                        <i class="fas fa-futbol interest-icon"></i>
+                        <span class="interest-text editable" data-field="hobby6">Bóng đá</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nút tải CV -->
+            <a href="#" class="download-resume animate delay-7" id="download-btn">Tải CV (PDF)</a>
+        </div>
+    </div>
+
+    <!-- Modal cho việc chỉnh sửa kỹ năng -->
+    <div class="modal" id="skillModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Chỉnh sửa kỹ năng</h3>
+            <form id="skillForm">
+                <div class="form-group">
+                    <label for="skillName">Tên kỹ năng:</label>
+                    <input type="text" id="skillName" required>
+                </div>
+                <div class="form-group">
+                    <label for="skillLevel">Mức độ (%):</label>
+                    <input type="range" id="skillLevel" min="0" max="100" value="50">
+                    <span id="skillLevelValue">50%</span>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Lưu</button>
+                    <button type="button" class="cancel-btn">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts cho các thư viện -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Scripts -->
+    <script src="js/cv-duy.js"></script>
+    </div>
+</body>
+</html>

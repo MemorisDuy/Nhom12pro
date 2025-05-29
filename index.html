@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Nhóm 12PRO - Đại học Giao thông Vận tải</title>
+    <meta name="description" content="Website CV tổng hợp của nhóm 12PRO - Sinh viên Đại học Giao thông Vận tải TP.HCM">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-navbar" id="mainNavbar">
+        <div class="nav-container">
+            <div class="nav-brand" onclick="location.reload()">
+                <div class="brand-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Nhóm 12PRO</span>
+                    <span class="brand-subtitle">UTH Group</span>
+                </div>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" class="nav-link active" data-page="home">
+                    <i class="fas fa-home"></i> 
+                    <span>Trang chủ</span>
+                </a></li>
+                <li><a href="#" class="nav-link" data-page="duy" data-member="Nguyễn Ngọc Duy">
+                    <i class="fas fa-user-tie"></i> 
+                    <span>Nguyễn Ngọc Duy</span>
+                </a></li>
+                <li><a href="#" class="nav-link" data-page="manh" data-member="Huỳnh Đức Mạnh">
+                    <i class="fas fa-user-graduate"></i> 
+                    <span>Huỳnh Đức Mạnh</span>
+                </a></li>
+                <li><a href="#" class="nav-link" data-page="thang" data-member="Nguyễn Quốc Thắng">
+                    <i class="fas fa-user-cog"></i> 
+                    <span>Nguyễn Quốc Thắng</span>
+                </a></li>
+                <li><a href="#" class="nav-link" data-page="truc" data-member="Võ Trung Trực">
+                    <i class="fas fa-user-edit"></i> 
+                    <span>Võ Trung Trực</span>
+                </a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Chuyển đổi theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Indicator -->
+        <div class="nav-indicator" id="navIndicator"></div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="main-container">
+        
+        <!-- HOME PAGE -->
+        <div id="home-content" class="cv-content active">
+            <!-- Hero Section với Particles -->
+            <div class="hero-section">
+                <div id="particles-js"></div>
+                <div class="hero-overlay"></div>
+                
+                <div class="hero-content">
+                    <div class="hero-badge" data-aos="fade-down">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Đại học Giao thông Vận tải TP.HCM</span>
+                    </div>
+                    
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                        <span class="title-line">CV Nhóm</span>
+                        <span class="title-highlight">12PRO</span>
+                    </h1>
+                    
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+                        Chuyên ngành Công nghệ Thông tin - Khóa 2023
+                    </p>
+                    
+                    <div class="hero-description" data-aos="fade-up" data-aos-delay="600">
+                        <p>Chào mừng bạn đến với trang CV tổng hợp của nhóm 12PRO.</p>
+                        <p>Chúng tôi là những sinh viên năm 2 đam mê công nghệ và phát triển web.</p>
+                    </div>
+                    
+                    <div class="hero-actions" data-aos="fade-up" data-aos-delay="800">
+                        <a href="#team" class="btn-primary scroll-link">
+                            <i class="fas fa-users"></i>
+                            <span>Khám phá thành viên</span>
+                        </a>
+                        <a href="#info" class="btn-secondary scroll-link">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Thông tin nhóm</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator" data-aos="fade-in" data-aos-delay="1000">
+                    <div class="scroll-mouse">
+                        <div class="scroll-wheel"></div>
+                    </div>
+                    <span>Cuộn để khám phá</span>
+                </div>
+            </div>
+
+            <!-- Team Statistics -->
+            <div class="stats-section" data-aos="fade-up">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" data-count="4">0</div>
+                                <div class="stat-label">Thành viên</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" data-count="2">0</div>
+                                <div class="stat-label">Năm học</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" data-count="100">0</div>
+                                <div class="stat-label">% Nhiệt huyết</div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number" data-count="12">0</div>
+                                <div class="stat-label">Dự án</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="team-section" id="team">
+                <div class="container">
+                    <div class="section-header" data-aos="fade-up">
+                        <h2 class="section-title">
+                            <span class="title-icon"><i class="fas fa-users"></i></span>
+                            <span class="title-text">Thành viên nhóm</span>
+                        </h2>
+                        <p class="section-subtitle">Gặp gỡ những thành viên tài năng của nhóm 12PRO</p>
+                    </div>
+                    
+                    <div class="team-grid">
+                        <!-- Nguyễn Ngọc Duy -->
+                        <div class="member-card" data-member="duy" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-avatar">
+                                <div class="avatar-frame">
+                                    <img src="Nhom12pro.img/NguyenNgocDuy.jpg" alt="Nguyễn Ngọc Duy">
+                                    <div class="avatar-overlay">
+                                        <div class="overlay-content">
+                                            <i class="fas fa-eye"></i>
+                                            <span>Xem CV</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="member-badge">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Nguyễn Ngọc Duy</h3>
+                                <div class="member-role">Thành Viên</div>
+                                <div class="member-id">MSSV: 052205011809</div>
+                                <div class="member-skills">
+                                    <span class="skill-tag">HTML/CSS</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">PHP</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Huỳnh Đức Mạnh -->
+                        <div class="member-card" data-member="manh" data-aos="fade-up" data-aos-delay="200">
+                            <div class="member-avatar">
+                                <div class="avatar-frame">
+                                    <img src="Nhom12pro.img/HuynhDucManh.png" alt="Huỳnh Đức Mạnh">
+                                    <div class="avatar-overlay">
+                                        <div class="overlay-content">
+                                            <i class="fas fa-eye"></i>
+                                            <span>Xem CV</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Huỳnh Đức Mạnh</h3>
+                                <div class="member-role">Nhóm Trưởng</div>
+                                <div class="member-id">MSSV: 052205011234</div>
+                                <div class="member-skills">
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Node.js</span>
+                                    <span class="skill-tag">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nguyễn Quốc Thắng -->
+                        <div class="member-card" data-member="thang" data-aos="fade-up" data-aos-delay="300">
+                            <div class="member-avatar">
+                                <div class="avatar-frame">
+                                    <img src="Nhom12pro.img/NguyenQuocThang.jpg" alt="Nguyễn Quốc Thắng">
+                                    <div class="avatar-overlay">
+                                        <div class="overlay-content">
+                                            <i class="fas fa-eye"></i>
+                                            <span>Xem CV</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Nguyễn Quốc Thắng</h3>
+                                <div class="member-role">Thành viên</div>
+                                <div class="member-id">MSSV: 052205011567</div>
+                                <div class="member-skills">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">AI/ML</span>
+                                    <span class="skill-tag">Data Science</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Võ Trung Trực -->
+                        <div class="member-card" data-member="truc" data-aos="fade-up" data-aos-delay="400">
+                            <div class="member-avatar">
+                                <div class="avatar-frame">
+                                    <img src="Nhom12pro.img/voTrungTruc.jpg" alt="Võ Trung Trực">
+                                    <div class="avatar-overlay">
+                                        <div class="overlay-content">
+                                            <i class="fas fa-eye"></i>
+                                            <span>Xem CV</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Võ Trung Trực</h3>
+                                <div class="member-role">Thành viên</div>
+                                <div class="member-id">MSSV: 052205011789</div>
+                                <div class="member-skills">
+                                    <span class="skill-tag">Java</span>
+                                    <span class="skill-tag">Spring Boot</span>
+                                    <span class="skill-tag">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="info-section" id="info">
+                <div class="container">
+                    <div class="section-header" data-aos="fade-up">
+                        <h2 class="section-title">
+                            <span class="title-icon"><i class="fas fa-info-circle"></i></span>
+                            <span class="title-text">Thông tin nhóm</span>
+                        </h2>
+                        <p class="section-subtitle">Chi tiết về nhóm 12PRO và trường đại học</p>
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-card" data-aos="fade-right" data-aos-delay="100">
+                            <div class="info-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3 class="info-title">Trường học</h3>
+                                <p class="info-description">Đại học Giao thông Vận tải TP.HCM</p>
+                                <p class="info-detail">Khoa Công nghệ Thông tin</p>
+                                <div class="info-badge">
+                                    <i class="fas fa-star"></i>
+                                    <span>Top University</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card" data-aos="fade-left" data-aos-delay="200">
+                            <div class="info-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3 class="info-title">Thời gian</h3>
+                                <p class="info-description">Năm học 2023 - 2027</p>
+                                <p class="info-detail">Sinh viên năm thứ 2</p>
+                                <div class="info-badge">
+                                    <i class="fas fa-clock"></i>
+                                    <span>4 Years Program</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="info-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3 class="info-title">Chuyên môn</h3>
+                                <p class="info-description">Web Development</p>
+                                <p class="info-detail">Frontend & Backend</p>
+                                <div class="info-badge">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Full Stack</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="info-icon">
+                                <i class="fas fa-target"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3 class="info-title">Mục tiêu</h3>
+                                <p class="info-description">Trở thành Developer</p>
+                                <p class="info-detail">Chuyên nghiệp và tài năng</p>
+                                <div class="info-badge">
+                                    <i class="fas fa-trophy"></i>
+                                    <span>Excellence</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies Section -->
+            <div class="tech-section">
+                <div class="container">
+                    <div class="section-header" data-aos="fade-up">
+                        <h2 class="section-title">
+                            <span class="title-icon"><i class="fas fa-code"></i></span>
+                            <span class="title-text">Công nghệ sử dụng</span>
+                        </h2>
+                        <p class="section-subtitle">Các ngôn ngữ và framework mà nhóm chúng tôi sử dụng</p>
+                    </div>
+                    
+                    <div class="tech-grid" data-aos="fade-up" data-aos-delay="200">
+                        <div class="tech-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CV CONTENT PLACEHOLDERS -->
+        <div id="duy-content" class="cv-content">
+            <div class="cv-navigation">
+                <button class="nav-btn back-home" title="Về trang chủ">
+                    <i class="fas fa-home"></i>
+                    <span>Trang chủ</span>
+                </button>
+                <div class="member-nav">
+                    <button class="nav-btn prev-member" data-target="truc" title="Thành viên trước">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Võ Trung Trực</span>
+                    </button>
+                    <button class="nav-btn next-member" data-target="manh" title="Thành viên tiếp theo">
+                        <span>Huỳnh Đức Mạnh</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cv-wrapper">
+                <h1>CV Nguyễn Ngọc Duy</h1>
+                <p>Nội dung CV sẽ được load từ cv-duy.html</p>
+            </div>
+        </div>
+
+        <div id="manh-content" class="cv-content">
+            <div class="cv-navigation">
+                <button class="nav-btn back-home" title="Về trang chủ">
+                    <i class="fas fa-home"></i>
+                    <span>Trang chủ</span>
+                </button>
+                <div class="member-nav">
+                    <button class="nav-btn prev-member" data-target="duy" title="Thành viên trước">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Nguyễn Ngọc Duy</span>
+                    </button>
+                    <button class="nav-btn next-member" data-target="thang" title="Thành viên tiếp theo">
+                        <span>Nguyễn Quốc Thắng</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cv-wrapper">
+                <h1>CV Huỳnh Đức Mạnh</h1>
+                <p>Nội dung CV sẽ được load từ cv-manh.html</p>
+            </div>
+        </div>
+
+        <div id="thang-content" class="cv-content">
+            <div class="cv-navigation">
+                <button class="nav-btn back-home" title="Về trang chủ">
+                    <i class="fas fa-home"></i>
+                    <span>Trang chủ</span>
+                </button>
+                <div class="member-nav">
+                    <button class="nav-btn prev-member" data-target="manh" title="Thành viên trước">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Huỳnh Đức Mạnh</span>
+                    </button>
+                    <button class="nav-btn next-member" data-target="truc" title="Thành viên tiếp theo">
+                        <span>Võ Trung Trực</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cv-wrapper">
+                <h1>CV Nguyễn Quốc Thắng</h1>
+                <p>Nội dung CV sẽ được load từ cv-thang.html</p>
+            </div>
+        </div>
+
+        <div id="truc-content" class="cv-content">
+            <div class="cv-navigation">
+                <button class="nav-btn back-home" title="Về trang chủ">
+                    <i class="fas fa-home"></i>
+                    <span>Trang chủ</span>
+                </button>
+                <div class="member-nav">
+                    <button class="nav-btn prev-member" data-target="thang" title="Thành viên trước">
+                        <i class="fas fa-chevron-left"></i>
+                        <span>Nguyễn Quốc Thắng</span>
+                    </button>
+                    <button class="nav-btn next-member" data-target="duy" title="Thành viên tiếp theo">
+                        <span>Nguyễn Ngọc Duy</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="cv-wrapper">
+                <h1>CV Võ Trung Trực</h1>
+                <p>Nội dung CV sẽ được load từ cv-truc.html</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-users"></i>
+                        <span>Nhóm 12PRO</span>
+                    </div>
+                    <p class="footer-description">
+                        Nhóm sinh viên đam mê công nghệ và phát triển web tại Đại học Giao thông Vận tải TP.HCM
+                    </p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Thông tin</h4>
+                    <ul class="footer-links">
+                        <li><a href="#team">Thành viên</a></li>
+                        <li><a href="#info">Thông tin nhóm</a></li>
+                        <li><a href="#tech">Công nghệ</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Liên hệ</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>nhom12pro@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>0123 456 789</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>TP. Hồ Chí Minh</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Trường học</h4>
+                    <div class="university-info">
+                        <p><strong>Đại học Giao thông Vận tải TP.HCM</strong></p>
+                        <p>Khoa Công nghệ Thông tin</p>
+                        <p>Năm học: 2023 - 2027</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Nhóm 12PRO. All rights reserved.</p>
+                    <p>Made with <i class="fas fa-heart"></i> by Team 12PRO</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="logo-text">12PRO</div>
+            </div>
+            <div class="loading-spinner"></div>
+            <h3 class="loading-title">Đang tải...</h3>
+            <p class="loading-subtitle">Vui lòng chờ trong giây lát</p>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Lên đầu trang">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

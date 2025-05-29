@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Nguyễn Quốc Thắng</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    
+    <!-- Individual CV CSS -->
+    <link rel="stylesheet" href="css/cv-thang.css">
+</head>
+<body>
+    <!-- Thêm class wrapper chính -->
+    <div class="cv-thang-wrapper">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-overlay">
+            <div class="loader">
+                <div class="loading-spinner"></div>
+                <p>Đang tải CV...</p>
+            </div>
+        </div>
+
+        <!-- Navigation Banner - YÊU CẦU 1 -->
+        <nav class="navbar-banner" id="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <i class="fas fa-user-tie"></i>
+                    <span>CV Professional</span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#about" class="nav-link smooth-scroll">Giới thiệu</a></li>
+                    <li><a href="#experience" class="nav-link smooth-scroll">Kinh nghiệm</a></li>
+                    <li><a href="#skills" class="nav-link smooth-scroll">Kỹ năng</a></li>
+                    <li><a href="#projects" class="nav-link smooth-scroll">Dự án</a></li>
+                    <li><a href="#contact" class="nav-link smooth-scroll">Liên hệ</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Container -->
+        <div class="container" id="cv-content">
+            <!-- Header với Animation -->
+            <header class="header animate-on-scroll">
+                <div class="profile-img-container">
+                    <div class="profile-img" id="profile-upload">
+                        <!-- Bỏ icon user mặc định -->
+                        <!-- <i class="fas fa-user"></i> -->
+                        <!-- Sửa style để hiển thị ảnh và đường dẫn ảnh -->
+                        <img src="/Nhom12pro.img/NguyenQuocThang.jpg" alt="Profile Photo">
+                        <div class="upload-overlay">
+                            <i class="fas fa-camera"></i>
+                            <span>Thay đổi ảnh</span>
+                        </div>
+                    </div>
+                    <div class="profile-status">
+                        <span class="status-dot"></span>
+                        <span>Sẵn sàng làm việc</span>
+                    </div>
+                </div>
+                <div class="header-content">
+                    <h1 class="name typing-animation">Nguyễn Quốc Thắng</h1>
+                    <p class="title slide-in-right">Sinh viên Kỹ thuật Giao thông</p>
+                    
+                    <!-- Enhanced Contact Info - YÊU CẦU 9 -->
+                    <div class="contact-info" id="contact">
+                        <div class="contact-item" data-tooltip="Gửi email">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:thangnq1937@gmail.com">thangnq1937@gmail.com</a>
+                        </div>
+                        <div class="contact-item" data-tooltip="Gọi điện thoại">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:0865065697">086 506 5697</a>
+                        </div>
+                        <div class="contact-item" data-tooltip="Vị trí hiện tại">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Ho Chi Minh City, Vietnam</span>
+                        </div>
+                        <div class="contact-item" data-tooltip="Facebook cá nhân">
+                            <i class="fab fa-facebook"></i>
+                            <a href="https://www.facebook.com/quocthang2508" target="_blank">Facebook Profile</a>
+                        </div>
+                        <div class="contact-item" data-tooltip="GitHub repository">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/tuhoclaptrinhvn" target="_blank">GitHub Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content với Grid Layout - YÊU CẦU 2 -->
+            <main class="main-content">
+                <div class="left-column">
+                    <!-- Personal Information - YÊU CẦU 3 -->
+                    <section class="section animate-on-scroll" id="about">
+                        <h2 class="section-title">
+                            <i class="fas fa-user-circle"></i>
+                            Thông tin cá nhân
+                        </h2>
+                        <div class="personal-card">
+                            <p class="personal-description">
+                                Sinh viên năm 2 ngành Kỹ thuật Giao thông tại Trường Đại học Giao thông Vận tải, có nền tảng vững chắc về hệ thống giao thông và công nghệ lập trình.
+                            </p>
+                            <div class="personal-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">2+</span>
+                                    <span class="stat-label">Năm học</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">5+</span>
+                                    <span class="stat-label">Dự án</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">3.0</span>
+                                    <span class="stat-label">GPA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Enhanced Skills - YÊU CẦU 12 -->
+                    <section class="section animate-on-scroll" id="skills">
+                        <h2 class="section-title">
+                            <i class="fas fa-cogs"></i>
+                            Kỹ năng
+                        </h2>
+                        <div class="skills-container">
+                            <div class="skill-item" data-skill="70">
+                                <div class="skill-info">
+                                    <i class="fab fa-html5" style="color: #e34c26;"></i>
+                                    <span>HTML5</span>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress html-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="65">
+                                <div class="skill-info">
+                                    <i class="fab fa-css3-alt" style="color: #264de4;"></i>
+                                    <span>CSS3</span>
+                                    <span class="skill-percentage">65%</span>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress css-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="60">
+                                <div class="skill-info">
+                                    <i class="fab fa-js" style="color: #f7df1e;"></i>
+                                    <span>JavaScript</span>
+                                    <span class="skill-percentage">60%</span>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress js-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="55">
+                                <div class="skill-info">
+                                    <i class="fab fa-python" style="color: #3776ab;"></i>
+                                    <span>Python</span>
+                                    <span class="skill-percentage">55%</span>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress python-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="40">
+                                <div class="skill-info">
+                                    <i class="fas fa-database" style="color: #00758F;"></i>
+                                    <span>MySQL</span>
+                                    <span class="skill-percentage">40%</span>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress mysql-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="50">
+                                <div class="skill-info">
+                                    <i class="fab fa-git-alt" style="color: #F05032;"></i>
+                                    <span>Git</span>
+                                    <span class="skill-percentage">50%</span>
+                                </div>
+                                <div class="skill-progress-container">
+                                    <div class="skill-progress git-progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Enhanced Languages - YÊU CẦU 6 -->
+                    <section class="section animate-on-scroll">
+                        <h2 class="section-title">
+                            <i class="fas fa-language"></i>
+                            Ngôn ngữ
+                        </h2>
+                        <div class="languages-container">
+                            <div class="language-item">
+                                <div class="language-header">
+                                    <span class="language-name">Tiếng Việt</span>
+                                    <span class="language-level-text">Bản ngữ</span>
+                                </div>
+                                <div class="language-progress-bar">
+                                    <div class="language-progress" data-width="100"></div>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <div class="language-header">
+                                    <span class="language-name">Tiếng Anh</span>
+                                    <span class="language-level-text">Trung cấp</span>
+                                </div>
+                                <div class="language-progress-bar">
+                                    <div class="language-progress" data-width="60"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Enhanced Interests - YÊU CẦU 5 -->
+                    <section class="section animate-on-scroll">
+                        <h2 class="section-title">
+                            <i class="fas fa-heart"></i>
+                            Sở thích
+                        </h2>
+                        <div class="interests-grid">
+                            <div class="interest-card">
+                                <div class="interest-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <span>Lập trình</span>
+                            </div>
+                            <div class="interest-card">
+                                <div class="interest-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <span>Đọc sách</span>
+                            </div>
+                            <div class="interest-card">
+                                <div class="interest-icon">
+                                    <i class="fas fa-hiking"></i>
+                                </div>
+                                <span>Du lịch</span>
+                            </div>
+                            <div class="interest-card">
+                                <div class="interest-icon">
+                                    <i class="fas fa-futbol"></i>
+                                </div>
+                                <span>Bóng đá</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="right-column">
+                    <!-- Education -->
+                    <section class="section animate-on-scroll">
+                        <h2 class="section-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            Học vấn
+                        </h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="item-title">Đại học - Năm 2</h3>
+                                    <h4 class="item-subtitle">Trường Đại học Giao thông Vận tải</h4>
+                                    <div class="item-date">2023 - 2027 (Dự kiến)</div>
+                                    <p class="item-description">
+                                        Chuyên ngành: Kỹ thuật Giao thông<br>
+                                        GPA hiện tại: 3.0/4.0<br>
+                                        Các môn học liên quan: Hệ thống Giao thông, Kỹ thuật Giao thông
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Enhanced Projects - YÊU CẦU 8 -->
+                    <section class="section animate-on-scroll" id="projects">
+                        <h2 class="section-title">
+                            <i class="fas fa-project-diagram"></i>
+                            Projects
+                        </h2>
+                        <div class="projects-container">
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3 class="project-title">Student Management System</h3>
+                                    <span class="project-date">2024</span>
+                                </div>
+                                <p class="project-description">
+                                    Phát triển ứng dụng web quản lý sinh viên bằng HTML, CSS, JavaScript, PHP cơ bản.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">PHP</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Demo
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                        Code
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3 class="project-title">Personal Portfolio Website</h3>
+                                    <span class="project-date">2024</span>
+                                </div>
+                                <p class="project-description">
+                                    Tạo website cá nhân responsive bằng HTML5, CSS3, JavaScript.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML5</span>
+                                    <span class="tech-tag">CSS3</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Demo
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                        Code
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <h3 class="project-title">Basic Calculator App</h3>
+                                    <span class="project-date">2024</span>
+                                </div>
+                                <p class="project-description">
+                                    Xây dựng ứng dụng máy tính cơ bản bằng Python và Tkinter.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Tkinter</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        Demo
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fab fa-github"></i>
+                                        Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Enhanced Experience - YÊU CẦU 4 -->
+                    <section class="section animate-on-scroll" id="experience">
+                        <h2 class="section-title">
+                            <i class="fas fa-briefcase"></i>
+                            Kinh nghiệm làm việc
+                        </h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="item-title">Freelance Web Developer</h3>
+                                    <h4 class="item-subtitle">Self-employed</h4>
+                                    <div class="item-date">06/2024 - Present</div>
+                                    <p class="item-description">
+                                        - Làm website đơn giản cho doanh nghiệp nhỏ<br>
+                                        - Tự học và áp dụng công nghệ web mới<br>
+                                        - Quản lý liên lạc khách hàng và tiến độ dự án
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3 class="item-title">Tutor - Programming Basics</h3>
+                                    <h4 class="item-subtitle">University Tutoring Center</h4>
+                                    <div class="item-date">02/2024 - Present</div>
+                                    <p class="item-description">
+                                        - Hỗ trợ sinh viên năm nhất về lập trình cơ bản<br>
+                                        - Hướng dẫn Python và giải thuật cơ bản
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Enhanced Achievements - YÊU CẦU 7 -->
+                    <section class="section animate-on-scroll">
+                        <h2 class="section-title">
+                            <i class="fas fa-trophy"></i>
+                            Thành tích & Hoạt động
+                        </h2>
+                        <div class="achievements-container">
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h3>Programming Club Member</h3>
+                                    <span class="achievement-date">2023 - Present</span>
+                                    <p>Thành viên CLB lập trình, tham gia workshop, hackathon.</p>
+                                </div>
+                            </div>
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h3>Dean's List</h3>
+                                    <span class="achievement-date">Semester 1, 2024</span>
+                                    <p>Đạt thành tích học tập xuất sắc với GPA trên 3.0.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Certificates -->
+                    <section class="section animate-on-scroll">
+                        <h2 class="section-title">
+                            <i class="fas fa-certificate"></i>
+                            Chứng chỉ
+                        </h2>
+                        <div class="certificates-container">
+                            <div class="certificate-item">
+                                <div class="certificate-icon">
+                                    <i class="fab fa-free-code-camp"></i>
+                                </div>
+                                <div class="certificate-info">
+                                    <h3>Giới thiệu về Phát triển Web</h3>
+                                    <span class="certificate-issuer">FreeCodeCamp</span>
+                                    <span class="certificate-date">2024</span>
+                                </div>
+                            </div>
+                            <div class="certificate-item">
+                                <div class="certificate-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="certificate-info">
+                                    <h3>Python Basics Certificate</h3>
+                                    <span class="certificate-issuer">Coursera</span>
+                                    <span class="certificate-date">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>&copy; 2025 Nguyen Quoc Thang - Professional CV</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/quocthang2508" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://github.com/tuhoclaptrinhvn" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:thangnq1937@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Enhanced Control Panel -->
+        <div class="control-panel">
+            <div class="theme-switch">
+                <h3>Theme</h3>
+                <div class="theme-buttons">
+                    <div class="theme-btn blue active" data-theme="blue" title="Blue theme"></div>
+                    <div class="theme-btn green" data-theme="green" title="Green theme"></div>
+                    <div class="theme-btn purple" data-theme="purple" title="Purple theme"></div>
+                    <div class="theme-btn red" data-theme="red" title="Red theme"></div>
+                    <div class="theme-btn dark" data-theme="dark" title="Dark theme"></div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="print-btn" class="action-btn" title="In CV">
+                    <i class="fas fa-print"></i> 
+                    <span>Print</span>
+                </button>
+                <button id="pdf-btn" class="action-btn" title="Xuất PDF">
+                    <i class="fas fa-file-pdf"></i> 
+                    <span>PDF</span>
+                </button>
+                <button id="edit-btn" class="action-btn" title="Chỉnh sửa">
+                    <i class="fas fa-edit"></i> 
+                    <span>Edit</span>
+                </button>
+                <button id="save-btn" class="action-btn" title="Lưu thông tin">
+                    <i class="fas fa-save"></i> 
+                    <span>Save</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Enhanced Modal - YÊU CẦU 10 -->
+        <div id="edit-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>
+                        <i class="fas fa-edit"></i>
+                        Chỉnh sửa thông tin CV
+                    </h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-name">
+                                <i class="fas fa-user"></i>
+                                Họ và tên:
+                            </label>
+                            <input type="text" id="edit-name" placeholder="Nhập họ tên đầy đủ">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-title">
+                                <i class="fas fa-briefcase"></i>
+                                Chức danh:
+                            </label>
+                            <input type="text" id="edit-title" placeholder="Ví dụ: Transportation Engineering Student">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-email">
+                                <i class="fas fa-envelope"></i>
+                                Email:
+                            </label>
+                            <input type="email" id="edit-email" placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-phone">
+                                <i class="fas fa-phone"></i>
+                                Số điện thoại:
+                            </label>
+                            <input type="text" id="edit-phone" placeholder="0123 456 789">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-address">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Địa chỉ:
+                            </label>
+                            <input type="text" id="edit-address" placeholder="TP. Hồ Chí Minh, Việt Nam">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-facebook">
+                                <i class="fab fa-facebook"></i>
+                                Facebook:
+                            </label>
+                            <input type="text" id="edit-facebook" placeholder="facebook.com/username">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-github">
+                                <i class="fab fa-github"></i>
+                                GitHub:
+                            </label>
+                            <input type="text" id="edit-github" placeholder="github.com/username">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edit-about">
+                            <i class="fas fa-info-circle"></i>
+                            Giới thiệu bản thân:
+                        </label>
+                        <textarea id="edit-about" rows="4" placeholder="Viết vài dòng giới thiệu về bản thân..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button id="apply-changes-btn" class="btn btn-primary">
+                        <i class="fas fa-check"></i>
+                        Áp dụng thay đổi
+                    </button>
+                    <button id="cancel-btn" class="btn btn-secondary">
+                        <i class="fas fa-times"></i>
+                        Hủy bỏ
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progress-bar" class="progress-bar"></div>
+
+        <!-- Back to Top Button -->
+        <button id="back-to-top" class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- Script -->
+        <script src="js/cv-thang.js"></script>
+    </div>
+</body>
+</html>
