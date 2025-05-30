@@ -1,4 +1,4 @@
-/* ========== MAIN.JS - SIMPLE & WORKING VERSION ========== */
+/* ========== MAIN.JS - FIXED VERSION ========== */
 
 // ========== GLOBAL VARIABLES ========== //
 let isLoading = false;
@@ -23,6 +23,21 @@ const memberNames = {
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Initializing 12PRO Website...');
     
+    // DETECT IF WE'RE ON CV PAGE OR HOMEPAGE
+    const currentPage = window.location.pathname;
+    const isHomePage = currentPage === '/' || currentPage.includes('index.html') || currentPage === '' || currentPage.endsWith('/');
+    
+    if (isHomePage) {
+        // HOMEPAGE INITIALIZATION
+        initializeHomepage();
+    } else {
+        // CV PAGE INITIALIZATION - IMPORTANT!
+        initializeCVPage();
+    }
+});
+
+// ========== HOMEPAGE INITIALIZATION ========== //
+function initializeHomepage() {
     try {
         // Initialize components
         initializeNavigation();
@@ -49,7 +64,56 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('❌ Error initializing website:', error);
         hideLoadingScreen(); // Make sure to hide loading on error
     }
-});
+}
+
+// ========== CV PAGE INITIALIZATION ========== //
+function initializeCVPage() {
+    try {
+        console.log('🔧 Initializing CV page...');
+        
+        // IMMEDIATELY HIDE ANY LOADING OVERLAYS
+        hideAllLoadingScreens();
+        
+        // Initialize basic components for CV pages
+        initializeThemeToggle();
+        initializeBackToTop();
+        initializeSmoothScroll();
+        
+        console.log('✅ CV page initialized successfully');
+    } catch (error) {
+        console.error('❌ Error initializing CV page:', error);
+        hideAllLoadingScreens();
+    }
+}
+
+// ========== HIDE ALL LOADING SCREENS ========== //
+function hideAllLoadingScreens() {
+    // Hide main loading screen
+    const loadingScreen = document.getElementById('loadingScreen');
+    if (loadingScreen) {
+        loadingScreen.style.display = 'none';
+        loadingScreen.classList.add('hidden');
+    }
+    
+    // Hide page transition overlay
+    const pageTransition = document.getElementById('pageTransition');
+    if (pageTransition) {
+        pageTransition.style.display = 'none';
+        pageTransition.style.opacity = '0';
+        pageTransition.style.visibility = 'hidden';
+    }
+    
+    // Hide any other overlays with transition classes
+    const overlays = document.querySelectorAll('.page-transition, .loading-overlay, .transition-overlay');
+    overlays.forEach(overlay => {
+        overlay.style.display = 'none';
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+    });
+    
+    isLoading = false;
+    console.log('✅ All loading screens hidden');
+}
 
 // ========== NAVIGATION SYSTEM ========== //
 function initializeNavigation() {
@@ -90,7 +154,7 @@ function initializeNavigation() {
             }
             
             if (page && cvFiles[page]) {
-                // Navigate to separate CV page
+                // Navigate to separate CV page - SIMPLIFIED
                 navigateToCVPage(page);
                 
                 // Close mobile menu
@@ -128,19 +192,60 @@ function initializeNavigation() {
     });
 }
 
-// ========== CV PAGE NAVIGATION ========== //
+// ========== CV PAGE NAVIGATION - SIMPLIFIED ========== //
 function navigateToCVPage(member) {
     if (isLoading) return;
     
     console.log(`🔄 Navigating to CV page: ${member}`);
     
-    // Show loading transition
-    showPageTransition(`Đang chuyển đến CV ${memberNames[member]}...`);
+    // SIMPLE NAVIGATION - NO COMPLEX LOADING
+    showSimpleTransition(`Đang chuyển đến CV ${memberNames[member]}...`);
     
-    // Navigate to CV page after short delay
+    // Navigate after very short delay
     setTimeout(() => {
         window.location.href = cvFiles[member];
-    }, 800);
+    }, 500);
+}
+
+// ========== SIMPLE TRANSITION - NO COMPLEX OVERLAYS ========== //
+function showSimpleTransition(message) {
+    // Create simple loading indicator
+    const indicator = document.createElement('div');
+    indicator.id = 'simpleTransition';
+    indicator.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.95);
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        z-index: 9999;
+        text-align: center;
+        font-weight: 600;
+        color: #374151;
+    `;
+    indicator.innerHTML = `
+        <div style="margin-bottom: 10px;">
+            <div style="width: 30px; height: 30px; border: 3px solid #e5e7eb; border-top: 3px solid #3b82f6; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+        </div>
+        ${message}
+        <style>
+            @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        </style>
+    `;
+    
+    document.body.appendChild(indicator);
+    isLoading = true;
+    
+    // Auto remove after 2 seconds (failsafe)
+    setTimeout(() => {
+        if (indicator && indicator.parentNode) {
+            indicator.remove();
+        }
+        isLoading = false;
+    }, 2000);
 }
 
 // ========== MEMBER CARDS FOR HOMEPAGE ========== //
@@ -182,111 +287,11 @@ function initializeMemberCards() {
 }
 
 // ========== LOADING SYSTEM ========== //
-function showPageTransition(message = 'Đang tải...') {
-    // Create and show page transition overlay
-    let overlay = document.getElementById('pageTransition');
-    if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.id = 'pageTransition';
-        overlay.innerHTML = `
-            <div class="transition-content">
-                <div class="transition-logo">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="transition-spinner"></div>
-                <h3 class="transition-message">${message}</h3>
-                <p>Vui lòng chờ trong giây lát...</p>
-            </div>
-        `;
-        overlay.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            color: white;
-        `;
-        
-        const style = document.createElement('style');
-        style.textContent = `
-            .transition-content {
-                text-align: center;
-                color: white;
-            }
-            .transition-logo {
-                width: 80px;
-                height: 80px;
-                background: rgba(255, 255, 255, 0.2);
-                border: 2px solid rgba(255, 255, 255, 0.3);
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                margin: 0 auto 2rem;
-                animation: pulse 2s infinite;
-            }
-            .transition-spinner {
-                width: 50px;
-                height: 50px;
-                border: 4px solid rgba(255, 255, 255, 0.3);
-                border-top: 4px solid white;
-                border-radius: 50%;
-                animation: spin 1s linear infinite;
-                margin: 0 auto 1.5rem;
-            }
-            .transition-message {
-                font-size: 1.5rem;
-                font-weight: 600;
-                margin-bottom: 0.5rem;
-            }
-            @keyframes pulse {
-                0%, 100% { transform: scale(1); opacity: 1; }
-                50% { transform: scale(1.05); opacity: 0.8; }
-            }
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(style);
-        document.body.appendChild(overlay);
-    } else {
-        // Update message
-        const messageEl = overlay.querySelector('.transition-message');
-        if (messageEl) messageEl.textContent = message;
-    }
-    
-    overlay.style.display = 'flex';
-    setTimeout(() => {
-        overlay.style.opacity = '1';
-    }, 10);
-    
-    isLoading = true;
-}
-
-function hidePageTransition() {
-    const overlay = document.getElementById('pageTransition');
-    if (overlay) {
-        overlay.style.opacity = '0';
-        setTimeout(() => {
-            overlay.style.display = 'none';
-        }, 300);
-    }
-    isLoading = false;
-}
-
 function showLoadingScreen() {
     const loadingScreen = document.getElementById('loadingScreen');
     if (loadingScreen) {
         loadingScreen.classList.remove('hidden');
+        loadingScreen.style.display = 'flex';
         isLoading = true;
     }
 }
@@ -296,6 +301,7 @@ function hideLoadingScreen() {
     if (loadingScreen) {
         loadingScreen.classList.add('hidden');
         setTimeout(() => {
+            loadingScreen.style.display = 'none';
             isLoading = false;
         }, 500);
     }
@@ -602,11 +608,12 @@ function debounce(func, wait, immediate) {
 window.addEventListener('error', function(e) {
     console.error('❌ JavaScript Error:', e.error);
     // Hide loading screen if there's an error
-    hideLoadingScreen();
+    hideAllLoadingScreens();
 });
 
 window.addEventListener('unhandledrejection', function(e) {
     console.error('❌ Unhandled Promise Rejection:', e.reason);
+    hideAllLoadingScreens();
 });
 
 // ========== RESIZE HANDLER ========== //
@@ -630,6 +637,21 @@ window.addEventListener('resize', debounce(function() {
     }
 }, 250));
 
+// ========== IMMEDIATE LOADING FIX ON PAGE LOAD ========== //
+// This runs immediately when script loads
+(function() {
+    // If we're on a CV page and there are loading overlays, hide them immediately
+    const currentPage = window.location.pathname;
+    const isCVPage = currentPage.includes('cv-') && currentPage.includes('.html');
+    
+    if (isCVPage) {
+        // Force hide any loading screens immediately
+        setTimeout(() => {
+            hideAllLoadingScreens();
+        }, 100);
+    }
+})();
+
 // ========== CONSOLE STYLING ========== //
 console.log('%c🚀 12PRO Website Loaded Successfully!', 'color: #3b82f6; font-size: 16px; font-weight: bold;');
 console.log('%cDeveloped by Team 12PRO - UTH Group', 'color: #6b7280; font-size: 12px;');
@@ -638,5 +660,6 @@ console.log('%cDeveloped by Team 12PRO - UTH Group', 'color: #6b7280; font-size:
 window.TeamWebsite = {
     navigateToCVPage,
     cvFiles,
-    memberNames
+    memberNames,
+    hideAllLoadingScreens
 };
