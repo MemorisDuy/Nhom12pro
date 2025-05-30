@@ -11,430 +11,433 @@
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     
-    <!-- Individual CV CSS -->
-    <link rel="stylesheet" href="/css/cv-truc.css">
+    <!-- Individual CV CSS - SỬA ĐƯỜNG DẪN -->
+    <link rel="stylesheet" href="./css/cv-truc.css">
 </head>
 <body>
     <div class="cv-truc-wrapper">
         <!-- Edit Mode Toggle -->
-    <div class="edit-toggle">
-        <button id="editModeBtn" class="edit-btn">
-            <i class="fas fa-edit"></i> Chế độ chỉnh sửa
-        </button>
-        <button id="saveModeBtn" class="save-btn" style="display: none;">
-            <i class="fas fa-save"></i> Lưu thay đổi
-        </button>
-    </div>
-
-    <div class="container">
-        <div class="cv-truc-wrapper">
-            <header class="header">
-                <div class="profile-section">
-                    <div class="profile-image">
-                        <img src="/Nhom12pro.img/voTrungTruc.jpg" alt="Profile Picture" id="profileImg">
-                        <div class="upload-overlay">
-                            <i class="fas fa-camera"></i>
-                            <input type="file" id="imageUpload" accept="image/*">
-                        </div>
-                    </div>
-                    <div class="profile-info">
-                        <h1 class="editable" data-field="name">Võ Trung Trực</h1>
-                        <p class="student-id editable" data-field="studentId">MSSV: 052205007577</p>
-                        <p class="title editable" data-field="jobTitle">Web Developer</p>
-                    </div>
-                </div>
-                <nav class="navbar">
-                    <ul class="nav-menu">
-                        <li><a href="#about" class="nav-link">Giới thiệu</a></li>
-                        <li><a href="#personal-info" class="nav-link">Thông tin cá nhân</a></li>
-                        <li><a href="#career-info" class="nav-link">Thông tin nghề nghiệp</a></li>
-                        <li><a href="#hobbies" class="nav-link">Sở thích</a></li>
-                        <li><a href="#languages" class="nav-link">Ngôn ngữ</a></li>
-                        <li><a href="#awards" class="nav-link">Chứng chỉ - Giải thưởng</a></li>
-                        <li><a href="#projects" class="nav-link">Dự án</a></li>
-                        <li><a href="#contact" class="nav-link">Liên hệ</a></li>
-                    </ul>
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </nav>
-            </header>
-
-            <main class="main-content">
-                <section id="about" class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-user"></i> Giới thiệu</h2>
-                    </div>
-                    <p class="editable" data-field="about">Xin chào! Tôi là Võ Trung Trực, một sinh viên đam mê lập trình web và công nghệ. Với kinh nghiệm trong việc phát triển các ứng dụng web sử dụng HTML, CSS, JavaScript và các framework hiện đại, tôi luôn tìm kiếm cơ hội để học hỏi và phát triển kỹ năng của mình.</p>
-                </section>
-
-                <section id="personal-info" class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-id-card"></i> Thông tin cá nhân</h2>
-                    </div>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <i class="fas fa-user"></i>
-                            <span>Họ tên: <span class="editable" data-field="fullName">Võ Trung Trực</span></span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-birthday-cake"></i>
-                            <span>Ngày sinh: <span class="editable" data-field="birthDate">04/06/2005</span></span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-venus-mars"></i>
-                            <span>Giới tính: <span class="editable" data-field="gender">Nam</span></span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Địa chỉ: <span class="editable" data-field="address">Thành phố Hồ Chí Minh</span></span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <span>Điện thoại: <span class="editable" data-field="phone">+962771429</span></span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email: <span class="editable" data-field="email">trucvo1235@email.com</span></span>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="career-info" class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-briefcase"></i> Thông tin nghề nghiệp</h2>
-                    </div>
-                    <div class="career-timeline" id="careerTimeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date editable" data-field="career1Date">2023 - Hiện tại</div>
-                            <div class="timeline-content">
-                                <h3 class="editable" data-field="career1Title">Sinh viên Công nghệ Thông tin</h3>
-                                <p class="editable" data-field="career1Desc">Đại học Giao thông vận tải - Chuyên ngành Công nghệ Phần mềm</p>
-                            </div>
-                            <button class="remove-btn" onclick="removeTimelineItem(this)">×</button>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date editable" data-field="career2Date">2022 - 2023</div>
-                            <div class="timeline-content">
-                                <h3 class="editable" data-field="career2Title">Sinh viên Công nghệ Thông tin</h3>
-                                <p class="editable" data-field="career2Desc">Đại học Giao thông vận tải - Chuyên ngành Công nghệ Phần mềm</p>
-                            </div>
-                            <button class="remove-btn" onclick="removeTimelineItem(this)">×</button>
-                        </div>
-                    </div>
-                    <button class="add-btn" onclick="addTimelineItem()">
-                        <i class="fas fa-plus"></i> Thêm kinh nghiệm
-                    </button>
-
-                    <div class="skills-section">
-                        <h3>Kỹ năng lập trình</h3>
-                        <div class="skills-grid" id="skillsGrid">
-                            <div class="skill-item">
-                                <i class="fab fa-html5"></i>
-                                <span class="editable" data-field="skill1Name">HTML5</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-skill="90"></div>
-                                </div>
-                                <input type="range" class="skill-range" min="0" max="100" value="90" onchange="updateSkill(this)">
-                                <button class="remove-btn" onclick="removeSkillItem(this)">×</button>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-css3-alt"></i>
-                                <span class="editable" data-field="skill2Name">CSS3</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-skill="85"></div>
-                                </div>
-                                <input type="range" class="skill-range" min="0" max="100" value="85" onchange="updateSkill(this)">
-                                <button class="remove-btn" onclick="removeSkillItem(this)">×</button>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-js-square"></i>
-                                <span class="editable" data-field="skill3Name">JavaScript</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-skill="80"></div>
-                                </div>
-                                <input type="range" class="skill-range" min="0" max="100" value="80" onchange="updateSkill(this)">
-                                <button class="remove-btn" onclick="removeSkillItem(this)">×</button>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fab fa-react"></i>
-                                <span class="editable" data-field="skill4Name">React.js</span>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" data-skill="75"></div>
-                                </div>
-                                <input type="range" class="skill-range" min="0" max="100" value="75" onchange="updateSkill(this)">
-                                <button class="remove-btn" onclick="removeSkillItem(this)">×</button>
-                            </div>
-                        </div>
-                        <button class="add-btn" onclick="addSkillItem()">
-                            <i class="fas fa-plus"></i> Thêm kỹ năng
-                        </button>
-                    </div>
-                </section>
-
-                <section id="hobbies" class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-heart"></i> Sở thích</h2>
-                    </div>
-                    <div class="hobbies-grid" id="hobbiesGrid">
-                        <div class="hobby-item">
-                            <i class="fas fa-code"></i>
-                            <h3 class="editable" data-field="hobby1Title">Lập trình</h3>
-                            <p class="editable" data-field="hobby1Desc">Phát triển ứng dụng web và mobile</p>
-                            <button class="remove-btn" onclick="removeHobbyItem(this)">×</button>
-                        </div>
-                        <div class="hobby-item">
-                            <i class="fas fa-book"></i>
-                            <h3 class="editable" data-field="hobby2Title">Đọc sách</h3>
-                            <p class="editable" data-field="hobby2Desc">Sách về công nghệ và phát triển bản thân</p>
-                            <button class="remove-btn" onclick="removeHobbyItem(this)">×</button>
-                        </div>
-                        <div class="hobby-item">
-                            <i class="fas fa-gamepad"></i>
-                            <h3 class="editable" data-field="hobby3Title">Chơi game</h3>
-                            <p class="editable" data-field="hobby3Desc">Game chiến thuật và giải đố</p>
-                            <button class="remove-btn" onclick="removeHobbyItem(this)">×</button>
-                        </div>
-                        <div class="hobby-item">
-                            <i class="fas fa-music"></i>
-                            <h3 class="editable" data-field="hobby4Title">Nghe nhạc</h3>
-                            <p class="editable" data-field="hobby4Desc">Nhạc pop và electronic</p>
-                            <button class="remove-btn" onclick="removeHobbyItem(this)">×</button>
-                        </div>
-                    </div>
-                    <button class="add-btn" onclick="addHobbyItem()">
-                        <i class="fas fa-plus"></i> Thêm sở thích
-                    </button>
-                </section>
-
-                <section id="languages" class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-language"></i> Ngôn ngữ & Kỹ năng</h2>
-                    </div>
-                    <div class="languages-grid" id="languagesGrid">
-                        <div class="language-item">
-                            <h3 class="editable" data-field="lang1Name">Tiếng Việt</h3>
-                            <div class="language-level">
-                                <span class="editable" data-field="lang1Level">Bản ngữ</span>
-                                <div class="level-stars" data-level="5">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                            <button class="remove-btn" onclick="removeLanguageItem(this)">×</button>
-                        </div>
-                        <div class="language-item">
-                            <h3 class="editable" data-field="lang2Name">Tiếng Anh</h3>
-                            <div class="language-level">
-                                <span class="editable" data-field="lang2Level">Trung cấp</span>
-                                <div class="level-stars" data-level="3">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                </div>
-                            </div>
-                            <button class="remove-btn" onclick="removeLanguageItem(this)">×</button>
-                        </div>
-                    </div>
-                    <button class="add-btn" onclick="addLanguageItem()">
-                        <i class="fas fa-plus"></i> Thêm ngôn ngữ
-                    </button>
-                </section>
-
-                <section id="awards" class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-trophy"></i> Chứng chỉ - Giải thưởng</h2>
-                    </div>
-                    <div class="awards-list" id="awardsList">
-                        <div class="award-item">
-                            <div class="award-icon">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="award-content">
-                                <h3 class="editable" data-field="award1Title">Chứng chỉ</h3>
-                                <p class="editable" data-field="award1Desc">Không có</p>
-                            </div>
-                            <button class="remove-btn" onclick="removeAwardItem(this)">×</button>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-icon">
-                                <i class="fas fa-medal"></i>
-                            </div>
-                            <div class="award-content">
-                                <h3 class="editable" data-field="award2Title">Giải thưởng</h3>
-                                <p class="editable" data-field="award2Desc">Không có</p>
-                            </div>
-                            <button class="remove-btn" onclick="removeAwardItem(this)">×</button>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <div class="award-content">
-                                <h3 class="editable" data-field="award3Title">Sinh viên tiên tiến</h3>
-                                <p class="editable" data-field="award3Desc">Học kỳ I năm 2023</p>
-                            </div>
-                            <button class="remove-btn" onclick="removeAwardItem(this)">×</button>
-                        </div>
-                    </div>
-                    <button class="add-btn" onclick="addAwardItem()">
-                        <i class="fas fa-plus"></i> Thêm giải thưởng
-                    </button>
-                </section>
-
-                <section id="projects" class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-project-diagram"></i> Dự án</h2>
-                    </div>
-                    <div class="projects-grid" id="projectsGrid">
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://via.placeholder.com/300x200/4a6cf7/white?text=E-Commerce" alt="Project 1">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="editable" data-field="project1Title">Website Thương mại điện tử</h3>
-                                <p class="editable" data-field="project1Desc">Xây dựng website bán hàng online với React.js và Node.js</p>
-                                <div class="project-tech">
-                                    <span class="tech-tag editable" data-field="project1Tech1">React</span>
-                                    <span class="tech-tag editable" data-field="project1Tech2">Node.js</span>
-                                    <span class="tech-tag editable" data-field="project1Tech3">MongoDB</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/trucvovn" target="_blank" class="btn-link">
-                                        <i class="fab fa-github"></i> GitHub
-                                    </a>
-                                    <a href="#" target="_blank" class="btn-link">
-                                        <i class="fas fa-external-link-alt"></i> Demo
-                                    </a>
-                                </div>
-                            </div>
-                            <button class="remove-btn" onclick="removeProjectItem(this)">×</button>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://via.placeholder.com/300x200/667eea/white?text=Todo+App" alt="Project 2">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="editable" data-field="project2Title">Ứng dụng Quản lý Công việc</h3>
-                                <p class="editable" data-field="project2Desc">Todo app với tính năng drag & drop và lưu trữ local</p>
-                                <div class="project-tech">
-                                    <span class="tech-tag editable" data-field="project2Tech1">HTML5</span>
-                                    <span class="tech-tag editable" data-field="project2Tech2">CSS3</span>
-                                    <span class="tech-tag editable" data-field="project2Tech3">JavaScript</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/trucvovn" target="_blank" class="btn-link">
-                                        <i class="fab fa-github"></i> GitHub
-                                    </a>
-                                    <a href="#" target="_blank" class="btn-link">
-                                        <i class="fas fa-external-link-alt"></i> Demo
-                                    </a>
-                                </div>
-                            </div>
-                            <button class="remove-btn" onclick="removeProjectItem(this)">×</button>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-image">
-                                <img src="https://via.placeholder.com/300x200/2c5aa0/white?text=Portfolio" alt="Project 3">
-                            </div>
-                            <div class="project-content">
-                                <h3 class="editable" data-field="project3Title">Portfolio Website</h3>
-                                <p class="editable" data-field="project3Desc">Website portfolio cá nhân responsive với animation</p>
-                                <div class="project-tech">
-                                    <span class="tech-tag editable" data-field="project3Tech1">HTML5</span>
-                                    <span class="tech-tag editable" data-field="project3Tech2">SCSS</span>
-                                    <span class="tech-tag editable" data-field="project3Tech3">JavaScript</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="https://github.com/trucvovn" target="_blank" class="btn-link">
-                                        <i class="fab fa-github"></i> GitHub
-                                    </a>
-                                    <a href="#" target="_blank" class="btn-link">
-                                        <i class="fas fa-external-link-alt"></i> Demo
-                                    </a>
-                                </div>
-                            </div>
-                            <button class="remove-btn" onclick="removeProjectItem(this)">×</button>
-                        </div>
-                    </div>
-                    <button class="add-btn" onclick="addProjectItem()">
-                        <i class="fas fa-plus"></i> Thêm dự án
-                    </button>
-                </section>
-
-                <section id="contact" class="section">
-                    <div class="section-header">
-                        <h2><i class="fas fa-envelope"></i> Liên hệ</h2>
-                    </div>
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:trucvo1235@email.com" class="editable" data-field="contactEmail">trucvo1235@email.com</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <a href="tel:+962771429" class="editable" data-field="contactPhone">+962771429</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-github"></i>
-                                <a href="https://github.com/trucvovn" target="_blank" class="editable" data-field="contactGithub">https://github.com/trucvovn</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-linkedin"></i>
-                                <a href="https://linkedin.com/in/votrungtruc" target="_blank" class="editable" data-field="contactLinkedin">linkedin.com/in/votrungtruc</a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-facebook"></i>
-                                <a href="https://www.facebook.com/vo.trung.truc.975754" target="_blank" class="editable" data-field="contactFacebook">https://www.facebook.com/vo.trung.truc.975754</a>
-                            </div>
-                        </div>
-                        <div class="contact-form">
-                            <h3>Gửi tin nhắn</h3>
-                            <form id="contactForm">
-                                <div class="form-group">
-                                    <input type="text" id="name" placeholder="Họ tên" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" id="email" placeholder="Email" required>
-                                </div>
-                                <div class="form-group">
-                                    <textarea id="message" placeholder="Tin nhắn" required></textarea>
-                                </div>
-                                <button type="submit" class="btn-submit">
-                                    <i class="fas fa-paper-plane"></i> Gửi tin nhắn
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </section>
-            </main>
-
-            <footer class="footer">
-                <div class="footer-content">
-                    <p>&copy; 2024 Võ Trung Trực. All rights reserved.</p>
-                    <div class="social-links">
-                        <a href="https://github.com/trucvovn" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/votrungtruc" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.facebook.com/vo.trung.truc.975754" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </footer>
+        <div class="edit-toggle">
+            <button id="editModeBtn" class="edit-btn">
+                <i class="fas fa-edit"></i> Chế độ chỉnh sửa
+            </button>
+            <button id="saveModeBtn" class="save-btn" style="display: none;">
+                <i class="fas fa-save"></i> Lưu thay đổi
+            </button>
         </div>
-    </div>
 
-    <div class="scroll-to-top" id="scrollToTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+        <div class="container">
+            <div class="cv-truc-wrapper">
+                <header class="header">
+                    <div class="profile-section">
+                        <div class="profile-image">
+                            <!-- SỬA ĐƯỜNG DẪN ẢNH -->
+                            <img src="./Nhom12pro.img/voTrungTruc.jpg" alt="Profile Picture" id="profileImg">
+                            <div class="upload-overlay">
+                                <i class="fas fa-camera"></i>
+                                <input type="file" id="imageUpload" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <h1 class="editable" data-field="name">Võ Trung Trực</h1>
+                            <p class="student-id editable" data-field="studentId">MSSV: 052205007577</p>
+                            <p class="title editable" data-field="jobTitle">Web Developer</p>
+                        </div>
+                    </div>
+                    <nav class="navbar">
+                        <ul class="nav-menu">
+                            <li><a href="#about" class="nav-link">Giới thiệu</a></li>
+                            <li><a href="#personal-info" class="nav-link">Thông tin cá nhân</a></li>
+                            <li><a href="#career-info" class="nav-link">Thông tin nghề nghiệp</a></li>
+                            <li><a href="#hobbies" class="nav-link">Sở thích</a></li>
+                            <li><a href="#languages" class="nav-link">Ngôn ngữ</a></li>
+                            <li><a href="#awards" class="nav-link">Chứng chỉ - Giải thưởng</a></li>
+                            <li><a href="#projects" class="nav-link">Dự án</a></li>
+                            <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+                        </ul>
+                        <div class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </nav>
+                </header>
 
-    <script src="js/cv-truc.js"></script>
+                <main class="main-content">
+                    <section id="about" class="section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-user"></i> Giới thiệu</h2>
+                        </div>
+                        <p class="editable" data-field="about">Xin chào! Tôi là Võ Trung Trực, một sinh viên đam mê lập trình web và công nghệ. Với kinh nghiệm trong việc phát triển các ứng dụng web sử dụng HTML, CSS, JavaScript và các framework hiện đại, tôi luôn tìm kiếm cơ hội để học hỏi và phát triển kỹ năng của mình.</p>
+                    </section>
+
+                    <section id="personal-info" class="section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-id-card"></i> Thông tin cá nhân</h2>
+                        </div>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-user"></i>
+                                <span>Họ tên: <span class="editable" data-field="fullName">Võ Trung Trực</span></span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-birthday-cake"></i>
+                                <span>Ngày sinh: <span class="editable" data-field="birthDate">04/06/2005</span></span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-venus-mars"></i>
+                                <span>Giới tính: <span class="editable" data-field="gender">Nam</span></span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Địa chỉ: <span class="editable" data-field="address">Thành phố Hồ Chí Minh</span></span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span>Điện thoại: <span class="editable" data-field="phone">+962771429</span></span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email: <span class="editable" data-field="email">trucvo1235@email.com</span></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="career-info" class="section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-briefcase"></i> Thông tin nghề nghiệp</h2>
+                        </div>
+                        <div class="career-timeline" id="careerTimeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date editable" data-field="career1Date">2023 - Hiện tại</div>
+                                <div class="timeline-content">
+                                    <h3 class="editable" data-field="career1Title">Sinh viên Công nghệ Thông tin</h3>
+                                    <p class="editable" data-field="career1Desc">Đại học Giao thông vận tải - Chuyên ngành Công nghệ Phần mềm</p>
+                                </div>
+                                <button class="remove-btn" onclick="removeTimelineItem(this)">×</button>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date editable" data-field="career2Date">2022 - 2023</div>
+                                <div class="timeline-content">
+                                    <h3 class="editable" data-field="career2Title">Sinh viên Công nghệ Thông tin</h3>
+                                    <p class="editable" data-field="career2Desc">Đại học Giao thông vận tải - Chuyên ngành Công nghệ Phần mềm</p>
+                                </div>
+                                <button class="remove-btn" onclick="removeTimelineItem(this)">×</button>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addTimelineItem()">
+                            <i class="fas fa-plus"></i> Thêm kinh nghiệm
+                        </button>
+
+                        <div class="skills-section">
+                            <h3>Kỹ năng lập trình</h3>
+                            <div class="skills-grid" id="skillsGrid">
+                                <div class="skill-item">
+                                    <i class="fab fa-html5"></i>
+                                    <span class="editable" data-field="skill1Name">HTML5</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-skill="90"></div>
+                                    </div>
+                                    <input type="range" class="skill-range" min="0" max="100" value="90" onchange="updateSkill(this)">
+                                    <button class="remove-btn" onclick="removeSkillItem(this)">×</button>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="fab fa-css3-alt"></i>
+                                    <span class="editable" data-field="skill2Name">CSS3</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-skill="85"></div>
+                                    </div>
+                                    <input type="range" class="skill-range" min="0" max="100" value="85" onchange="updateSkill(this)">
+                                    <button class="remove-btn" onclick="removeSkillItem(this)">×</button>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="fab fa-js-square"></i>
+                                    <span class="editable" data-field="skill3Name">JavaScript</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-skill="80"></div>
+                                    </div>
+                                    <input type="range" class="skill-range" min="0" max="100" value="80" onchange="updateSkill(this)">
+                                    <button class="remove-btn" onclick="removeSkillItem(this)">×</button>
+                                </div>
+                                <div class="skill-item">
+                                    <i class="fab fa-react"></i>
+                                    <span class="editable" data-field="skill4Name">React.js</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-skill="75"></div>
+                                    </div>
+                                    <input type="range" class="skill-range" min="0" max="100" value="75" onchange="updateSkill(this)">
+                                    <button class="remove-btn" onclick="removeSkillItem(this)">×</button>
+                                </div>
+                            </div>
+                            <button class="add-btn" onclick="addSkillItem()">
+                                <i class="fas fa-plus"></i> Thêm kỹ năng
+                            </button>
+                        </div>
+                    </section>
+
+                    <section id="hobbies" class="section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-heart"></i> Sở thích</h2>
+                        </div>
+                        <div class="hobbies-grid" id="hobbiesGrid">
+                            <div class="hobby-item">
+                                <i class="fas fa-code"></i>
+                                <h3 class="editable" data-field="hobby1Title">Lập trình</h3>
+                                <p class="editable" data-field="hobby1Desc">Phát triển ứng dụng web và mobile</p>
+                                <button class="remove-btn" onclick="removeHobbyItem(this)">×</button>
+                            </div>
+                            <div class="hobby-item">
+                                <i class="fas fa-book"></i>
+                                <h3 class="editable" data-field="hobby2Title">Đọc sách</h3>
+                                <p class="editable" data-field="hobby2Desc">Sách về công nghệ và phát triển bản thân</p>
+                                <button class="remove-btn" onclick="removeHobbyItem(this)">×</button>
+                            </div>
+                            <div class="hobby-item">
+                                <i class="fas fa-gamepad"></i>
+                                <h3 class="editable" data-field="hobby3Title">Chơi game</h3>
+                                <p class="editable" data-field="hobby3Desc">Game chiến thuật và giải đố</p>
+                                <button class="remove-btn" onclick="removeHobbyItem(this)">×</button>
+                            </div>
+                            <div class="hobby-item">
+                                <i class="fas fa-music"></i>
+                                <h3 class="editable" data-field="hobby4Title">Nghe nhạc</h3>
+                                <p class="editable" data-field="hobby4Desc">Nhạc pop và electronic</p>
+                                <button class="remove-btn" onclick="removeHobbyItem(this)">×</button>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addHobbyItem()">
+                            <i class="fas fa-plus"></i> Thêm sở thích
+                        </button>
+                    </section>
+
+                    <section id="languages" class="section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-language"></i> Ngôn ngữ & Kỹ năng</h2>
+                        </div>
+                        <div class="languages-grid" id="languagesGrid">
+                            <div class="language-item">
+                                <h3 class="editable" data-field="lang1Name">Tiếng Việt</h3>
+                                <div class="language-level">
+                                    <span class="editable" data-field="lang1Level">Bản ngữ</span>
+                                    <div class="level-stars" data-level="5">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <button class="remove-btn" onclick="removeLanguageItem(this)">×</button>
+                            </div>
+                            <div class="language-item">
+                                <h3 class="editable" data-field="lang2Name">Tiếng Anh</h3>
+                                <div class="language-level">
+                                    <span class="editable" data-field="lang2Level">Trung cấp</span>
+                                    <div class="level-stars" data-level="3">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <button class="remove-btn" onclick="removeLanguageItem(this)">×</button>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addLanguageItem()">
+                            <i class="fas fa-plus"></i> Thêm ngôn ngữ
+                        </button>
+                    </section>
+
+                    <section id="awards" class="section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-trophy"></i> Chứng chỉ - Giải thưởng</h2>
+                        </div>
+                        <div class="awards-list" id="awardsList">
+                            <div class="award-item">
+                                <div class="award-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="award-content">
+                                    <h3 class="editable" data-field="award1Title">Chứng chỉ</h3>
+                                    <p class="editable" data-field="award1Desc">Không có</p>
+                                </div>
+                                <button class="remove-btn" onclick="removeAwardItem(this)">×</button>
+                            </div>
+                            <div class="award-item">
+                                <div class="award-icon">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <div class="award-content">
+                                    <h3 class="editable" data-field="award2Title">Giải thưởng</h3>
+                                    <p class="editable" data-field="award2Desc">Không có</p>
+                                </div>
+                                <button class="remove-btn" onclick="removeAwardItem(this)">×</button>
+                            </div>
+                            <div class="award-item">
+                                <div class="award-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="award-content">
+                                    <h3 class="editable" data-field="award3Title">Sinh viên tiên tiến</h3>
+                                    <p class="editable" data-field="award3Desc">Học kỳ I năm 2023</p>
+                                </div>
+                                <button class="remove-btn" onclick="removeAwardItem(this)">×</button>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addAwardItem()">
+                            <i class="fas fa-plus"></i> Thêm giải thưởng
+                        </button>
+                    </section>
+
+                    <section id="projects" class="section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-project-diagram"></i> Dự án</h2>
+                        </div>
+                        <div class="projects-grid" id="projectsGrid">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://via.placeholder.com/300x200/4a6cf7/white?text=E-Commerce" alt="Project 1">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="editable" data-field="project1Title">Website Thương mại điện tử</h3>
+                                    <p class="editable" data-field="project1Desc">Xây dựng website bán hàng online với React.js và Node.js</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag editable" data-field="project1Tech1">React</span>
+                                        <span class="tech-tag editable" data-field="project1Tech2">Node.js</span>
+                                        <span class="tech-tag editable" data-field="project1Tech3">MongoDB</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://github.com/trucvovn" target="_blank" class="btn-link">
+                                            <i class="fab fa-github"></i> GitHub
+                                        </a>
+                                        <a href="#" target="_blank" class="btn-link">
+                                            <i class="fas fa-external-link-alt"></i> Demo
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="remove-btn" onclick="removeProjectItem(this)">×</button>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://via.placeholder.com/300x200/667eea/white?text=Todo+App" alt="Project 2">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="editable" data-field="project2Title">Ứng dụng Quản lý Công việc</h3>
+                                    <p class="editable" data-field="project2Desc">Todo app với tính năng drag & drop và lưu trữ local</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag editable" data-field="project2Tech1">HTML5</span>
+                                        <span class="tech-tag editable" data-field="project2Tech2">CSS3</span>
+                                        <span class="tech-tag editable" data-field="project2Tech3">JavaScript</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://github.com/trucvovn" target="_blank" class="btn-link">
+                                            <i class="fab fa-github"></i> GitHub
+                                        </a>
+                                        <a href="#" target="_blank" class="btn-link">
+                                            <i class="fas fa-external-link-alt"></i> Demo
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="remove-btn" onclick="removeProjectItem(this)">×</button>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://via.placeholder.com/300x200/2c5aa0/white?text=Portfolio" alt="Project 3">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="editable" data-field="project3Title">Portfolio Website</h3>
+                                    <p class="editable" data-field="project3Desc">Website portfolio cá nhân responsive với animation</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag editable" data-field="project3Tech1">HTML5</span>
+                                        <span class="tech-tag editable" data-field="project3Tech2">SCSS</span>
+                                        <span class="tech-tag editable" data-field="project3Tech3">JavaScript</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <a href="https://github.com/trucvovn" target="_blank" class="btn-link">
+                                            <i class="fab fa-github"></i> GitHub
+                                        </a>
+                                        <a href="#" target="_blank" class="btn-link">
+                                            <i class="fas fa-external-link-alt"></i> Demo
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="remove-btn" onclick="removeProjectItem(this)">×</button>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addProjectItem()">
+                            <i class="fas fa-plus"></i> Thêm dự án
+                        </button>
+                    </section>
+
+                    <section id="contact" class="section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-envelope"></i> Liên hệ</h2>
+                        </div>
+                        <div class="contact-content">
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:trucvo1235@email.com" class="editable" data-field="contactEmail">trucvo1235@email.com</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+962771429" class="editable" data-field="contactPhone">+962771429</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fab fa-github"></i>
+                                    <a href="https://github.com/trucvovn" target="_blank" class="editable" data-field="contactGithub">https://github.com/trucvovn</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fab fa-linkedin"></i>
+                                    <a href="https://linkedin.com/in/votrungtruc" target="_blank" class="editable" data-field="contactLinkedin">linkedin.com/in/votrungtruc</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fab fa-facebook"></i>
+                                    <a href="https://www.facebook.com/vo.trung.truc.975754" target="_blank" class="editable" data-field="contactFacebook">https://www.facebook.com/vo.trung.truc.975754</a>
+                                </div>
+                            </div>
+                            <div class="contact-form">
+                                <h3>Gửi tin nhắn</h3>
+                                <form id="contactForm">
+                                    <div class="form-group">
+                                        <input type="text" id="name" placeholder="Họ tên" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" id="email" placeholder="Email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea id="message" placeholder="Tin nhắn" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn-submit">
+                                        <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+
+                <footer class="footer">
+                    <div class="footer-content">
+                        <p>&copy; 2024 Võ Trung Trực. All rights reserved.</p>
+                        <div class="social-links">
+                            <a href="https://github.com/trucvovn" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/votrungtruc" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/vo.trung.truc.975754" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <div class="scroll-to-top" id="scrollToTop">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <!-- Script - SỬA ĐƯỜNG DẪN -->
+        <script src="./js/cv-truc.js"></script>
+    </div>
 </body>
 </html>
